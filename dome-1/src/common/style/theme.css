@@ -1,0 +1,153 @@
+:root:root {
+    --van-nav-bar-background: #0c0700;
+    --van-nav-bar-title-font-size: 17px;
+    --van-nav-bar-title-text-color: #fff;
+    --van-nav-bar-icon-color: #fff;
+    --van-nav-bar-arrow-size: 22px;
+
+    --van-swipe-indicator-active-background: #F7931E;
+    --van-skeleton-paragraph-height: 22px;
+    --van-skeleton-paragraph-background: #dcdee0;
+    --van-field-label-color: #FFFFFF;
+
+    --van-popover-dark-background: linear-gradient(136deg, #331403 0%, #0B0601 51%, #231202 100%);
+    --van-popover-dark-text-color: #fff;
+    --van-cell-text-color: #1C1A18;
+    --van-toast-default-width: 42%;
+
+    --van-stepper-background: transparent;
+    --van-stepper-button-icon-color: #b6b5b2;
+    --van-stepper-input-text-color: #fff;
+    --van-stepper-button-disabled-color: transparent;
+    --van-stepper-radius: 0;
+    --van-empty-description-color: #848e9c;
+
+    --van-tabbar-height: 68px;
+    --van-tabbar-item-text-color: #FFF;
+    --van-tabbar-background: rgba(255, 255, 255, 0.10);
+    --van-tabbar-item-active-background: transparent;
+
+    --van-field-input-text-color: #fff;
+
+
+    --van-sidebar-text-color: #9191A7;
+    --van-sidebar-active-color: transparent;
+    --van-sidebar-background: #0E1921;
+    --van-sidebar-selected-background: #263037;
+    --van-sidebar-selected-text-color: #fff;
+    --van-sidebar-selected-border-color: #0EFCFF;
+
+    --van-button-primary-border-color: transparent;
+
+    --van-button-default-background: linear-gradient(96deg, #FFE605 3.94%, #F90 97.26%);
+    --van-button-default-border-color: linear-gradient(96deg, #FFE605 3.94%, #F90 97.26%);
+
+
+    .van-button--default {
+        font-size: 16px;
+        color: #120C01;
+        border: none;
+        border-radius: 20px;
+        height: 42px;
+        box-shadow: 0  0  4px 0  rgba(255, 163, 5, 0.50);
+    }
+
+
+    --van-cell-background: transparent;
+    --van-cell-group-background: transparent;
+    --van-cell-vertical-padding: 0;
+    --van-cell-horizontal-padding: 0;
+    --van-field-placeholder-text-color: #787064;
+
+    .van-field__label {
+        --van-padding-base: 9px;
+        --van-field-label-color: #B1A899;
+    }
+
+    .van-cell__value {
+        /*background-color: #1c0430;*/
+        /*border: 1px solid #504134;*/
+        /*border-radius: 8px;*/
+
+        .van-field__body {
+            height: 42px;
+        }
+
+        .van-field__error-message {
+            padding: 0 10px;
+        }
+
+        .van-field__control {
+            padding-left: 10px;
+            height: 100%;
+            font-size: 14px;
+        }
+
+        .van-field__button {
+            padding-right: 10px;
+            font-size: 16px;
+            color: #FFA800;
+        }
+    }
+
+    --van-tab-text-color: #ACACAC;
+    --van-tab-active-text-color: #130217;
+    --van-tab-font-size: 12px;
+    --van-tabs-nav-background: rgba(255, 255, 255, 0.10);
+    --van-tabs-bottom-bar-width: 0;
+    --van-tabs-bottom-bar-height: 0;
+    --van-tabs-bottom-bar-color: transparent;
+
+    .van-tabs__nav {
+        border-radius: 27px;
+        /*border: 1px solid rgba(255, 255, 255, 0.10);*/
+    }
+
+    .van-tabs--line .van-tabs__wrap {
+        height: 32px;
+    }
+
+    .van-tabs__nav--line {
+        padding: 0 !important;
+        height: 30px;
+    }
+
+    .van-tab--grow, .van-tab {
+        min-width: 95px !important;
+    }
+
+    .van-tab--active {
+        min-width: 95px !important;
+        border-radius: 36px;
+        /*background: linear-gradient(273deg, #F8247D 3.58%, #9034E2 93.94%);*/
+        background: #ffffff;
+    }
+
+
+    --van-popup-background: #232323;
+    --van-popup-round-radius: 12px;
+
+    --van-progress-pivot-background: #ffa527;
+    --van-progress-pivot-text-color: #fff;
+    --van-progress-color: #ffa527;
+    --van-progress-height: 8px;
+    --van-progress-background: #e9e9e9;
+    --van-count-down-text-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

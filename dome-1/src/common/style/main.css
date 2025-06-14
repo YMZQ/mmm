@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+}
+@font-face {
+    font-family: "Sarala";
+    src: url('https://www.earthcoin.vip/resource/Sarala-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "RammettoOne-Regular";
+    src: url('https://www.earthcoin.vip/resource/RammettoOne-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "RubikGlitch-Regular";
+    src: url('@/assets/font/RubikGlitch-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    --van-base-font: "Sarala";
+    min-height: 100vh;
+    color: #fff;
+    background: #0c0700;
+    font-size: 12px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+    /*overflow-y: auto; !* 添加滚动支持 *!*/
+}
+
+img {
+    display: block;
+    box-sizing: border-box;
+}
+
+.filter-img {
+    width: 24px;
+    height: 24px;
+}
+
+
+html, body {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input {
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: #FFFFFF;
+}
+
+textarea {
+    border: none;
+    outline: none;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+.text-shadow-1 {
+    background: linear-gradient(122deg, #0AFFF0 16.68%, #2589FF 89.38%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.one-lines-ellipsis {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* 显示的最大行数 */
+    text-overflow: ellipsis;
+}
+
+.btn-style-1 {
+    color: #ff0099;
+    border-radius: 20px;
+    position: relative;
+    --border-width: 1px;
+    --border-radius: 20px;
+    --border-color: linear-gradient(273deg, #F8247D 3.58%, #9034E2 93.94%);
+
+    &::after {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: var(--border-width);
+        border-radius: var(--border-radius);
+        background: var(--border-color);
+        /* 随便定义一个颜色 */
+        --mask-bg: linear-gradient(#000, #000);
+        /* 类似background-clip */
+        --mask-clip: content-box, padding-box;
+        /* mask允许使用者通过遮罩或者裁切特定区域的图片的方式来隐藏一个元素的部分或者全部可见区域 */
+        /* mask-image类似background-image 设置了用作元素蒙版层的图像，默认值为none，值为透明图片，或透明渐变 */
+        -webkit-mask-image: var(--mask-bg), var(--mask-bg);
+        /* 默认值为border-box，可选值与background-origin相同 */
+        -webkit-mask-clip: var(--mask-clip);
+        /* exclude排除，只显示不重合的地方,Firefox支持4个属性 */
+        mask-composite: exclude;
+        /* 只显示下方遮罩，重合的地方不显示 */
+        -webkit-mask-composite: destination-out;
+    }
+}
