@@ -15,3 +15,6 @@ export function _sendBuyWhitelist(params) {
 export function _sendBuyWhitelistCallback(params) {
     return axios.post('/adc/html/elephant/10007.do', params);
 }
+export function _getAssetRecords(params) {
+    return axios.post('/adc/html/hpc/10008.do', params);
+}

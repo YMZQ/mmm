@@ -96,6 +96,10 @@ const hwmsg = {
     "text-5": "초기화",
     "text-6": "확인",
     "text-7": "수익 유형 선택"
-  }
+  },
+  "transactionType1": "일일 수익",
+  "transactionType2": "직접 추천 보상",
+  "transactionType3": "실적 보너스",
+  "transactionType4": "동급 실적 보너스"
 }
 export default hwmsg;

@@ -1,6 +1,7 @@
 //
 import en from './en'  //英文
 import zh from './zh'  //中文简体
+import ft from './ft'  //中文简体
 import rwmsg from './jp'  //日语
 import hwmsg from './ko'  //韩语
 // import w1msg from './vi'  //越南语
@@ -13,6 +14,7 @@ import hwmsg from './ko'  //韩语
 
 export default {
     zhmsg: zh, //中文简体
+    ftmsg: ft, //中文简体
     cnmsg: en, //英文
     rwmsg,
     hwmsg,

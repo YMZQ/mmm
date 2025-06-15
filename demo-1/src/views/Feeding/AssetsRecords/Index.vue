@@ -1,16 +1,16 @@
 <script setup>
-import {_getAssetRecords} from '@/service/feeding'
+import {_getAssetRecords} from '@/service/home'
 
 
 const headerBackRef = ref(null); // 创建引用
 const headerHeight = ref(0);
 const dataList = ref([]);
 const typeList = ref([
-  {id: 0, text: 'transactionType0', value: 0},
-  {id: 0, text: 'transactionType6', value: 6},
-  {id: 1, text: 'transactionType3', value: 3},
-  {id: 2, text: 'transactionType4', value: 4},
-  {id: 3, text: 'transactionType5', value: 5},
+  // {id: 0, text: 'transactionType0', value: 0},
+  {id: 0, text: 'transactionType1', value: 1},
+  {id: 1, text: 'transactionType2', value: 2},
+  {id: 2, text: 'transactionType3', value: 3},
+  {id: 3, text: 'transactionType4', value: 4},
 ]);
 const dataInfo = ref({});
 const show = ref(false);
@@ -38,6 +38,7 @@ const resetFun = async () => {
   pageModel.pages = 0
   pageModel.type = ''
   listViewSearch.value.searchFun()
+  show.value=false
 };
 const searchFun = async (value) => {
   if (value === 0) {
@@ -50,6 +51,7 @@ const searchFun = async (value) => {
   pageModel.pages = 0
   pageModel.type = type.value
   listViewSearch.value.searchFun()
+  show.value=false
 };
 const getImageUrl = (name) => {
   return new URL(`/src/assets/image/icon/${name}.png`, import.meta.url).href
@@ -70,25 +72,10 @@ onMounted(() => {
       </div>
     </div>
     <div>
-      <div class="bg-[#141414] rounded-md p-15">
-        <div
-            class="text-[#909090]  text-14 pb-5 border-b border-solid border-[rgba(255,255,255,0.10)] mb-10">
-          {{ $t('itemized.text-2') }}: 2025/12/12 15:23
-        </div>
-        <div class="grid grid-cols-2 gap-[10px]">
-          <div>
-            <div class="text-14 text-[#FFF] ">V1</div>
-            <div class="text-12 text-[#909090] mt-5">{{ $t('itemized.text-3') }}</div>
-          </div>
-          <div class="pl-10">
-            <div class="text-14 text-[#FFF] ">1000U</div>
-            <div class="text-12 text-[#909090] mt-5">{{ $t('itemized.text-4') }}</div>
-          </div>
-        </div>
-      </div>
+
     </div>
-    <!--    <list-view ref="listViewSearch" :getListApi="getListApi" v-model:pageModel="pageModel" v-model:dataList="dataList"-->
-    <!--               v-model:dataInfo="dataInfo">-->
+        <list-view ref="listViewSearch" :getListApi="getListApi" v-model:pageModel="pageModel" v-model:dataList="dataList"
+                   v-model:dataInfo="dataInfo">
     <!--      <div v-for="item in dataList"-->
     <!--           class="ml-8 p-15 mb-15 relative rounded-md bg-[#F5FDFF] border border-solid border-[#000]">-->
     <!--        <img class="w-[15px] h-[20px] absolute -left-7 top-1/2 -translate-y-1/2" src="@/assets/image/home/image-13.png"-->
@@ -99,7 +86,23 @@ onMounted(() => {
     <!--        </div>-->
     <!--        <div class="text-right text-[#7B92AB]">{{ item.create_time }}</div>-->
     <!--      </div>-->
-    <!--    </list-view>-->
+          <div  v-for="item in dataList" class="bg-[#141414] rounded-md p-15 mb-15">
+            <div
+                class="text-[#909090]  text-14 pb-5 border-b border-solid border-[rgba(255,255,255,0.10)] mb-10">
+              {{ $t('itemized.text-2') }}: {{ item.record_date }}
+            </div>
+            <div class="grid grid-cols-2 gap-[10px]">
+              <div>
+                <div class="text-14 text-[#FFF] ">{{$filters.fixNumber(item.amount_usdt)}}U</div>
+                <div class="text-12 text-[#909090] mt-5">{{ $t('itemized.text-3') }}</div>
+              </div>
+              <div class="pl-10">
+                <div class="text-14 text-[#FFF] ">{{ $transactionFlows(item.record_type) }}</div>
+                <div class="text-12 text-[#909090] mt-5">{{ $t('itemized.text-4') }}</div>
+              </div>
+            </div>
+          </div>
+        </list-view>
   </Main>
   <van-popup v-model:show="show" round position="bottom" class="popup-info"
              closeable
@@ -115,8 +118,8 @@ onMounted(() => {
         </div>
       </div>
       <div class="grid grid-cols-2 gap-x-[30px] px-20 text-16">
-        <div class="bg-[#343434] py-10 text-center rounded-sm font-600">{{ $t('itemized.text-5') }}</div>
-        <div class="bg-[#fad701] py-10 text-center rounded-sm font-600 text-[#000]">{{ $t('itemized.text-6') }}</div>
+        <div class="bg-[#343434] py-10 text-center rounded-sm font-600" @click="resetFun">{{ $t('itemized.text-5') }}</div>
+        <div class="bg-[#fad701] py-10 text-center rounded-sm font-600 text-[#000]" @click="searchFun">{{ $t('itemized.text-6') }}</div>
       </div>
     </div>
   </van-popup>

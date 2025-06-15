@@ -27,6 +27,8 @@ const info = ref({
   teamAmount: 0,
   surplusAmount: 0,
   thisAmount: 0,
+  todayHbc: 0,
+  totalHbc: 0,
 })
 const directList = ref([])
 const switchLanguage = async (langCode) => {
@@ -54,7 +56,7 @@ const getHome = async () => {
 // 初始化逻辑
 onMounted(() => {
   if (codeUid.value) {
-    switchLanguage('zhmsg')
+    switchLanguage(router.currentRoute.value.query.lang==='zh_hans'?'zhmsg':router.currentRoute.value.query.lang==='zh_hant'?'ftmsg':'cnmsg')
     store.changeCode(codeUid.value)
     initLogin()
   } else if (code.value) {
@@ -76,11 +78,11 @@ const getImageUrl = (name) => {
           class="p-15 mb-15 rounded-md border border-solid border-[#6E6E6E] grid grid-cols-2 gap-[20px] bg-[linear-gradient(180deg,#010101_0%,#212121_100%)]">
         <div>
           <div class="text-12 text-[#909090] mb-5">{{ $t('home.text-1', {text: 'HPC'}) }}</div>
-          <div class="text-14 text-[#FFF] font-bold">{{ $filters.fixNumber(info) }}</div>
+          <div class="text-14 text-[#FFF] font-bold">{{ $filters.fixNumber(info.totalHbc) }}</div>
         </div>
         <div>
           <div class="text-12 text-[#909090] mb-5">{{ $t('home.text-2', {text: 'HPC'}) }}</div>
-          <div class="text-14 text-[#FFF] font-bold">{{ $filters.fixNumber(info) }}</div>
+          <div class="text-14 text-[#FFF] font-bold">{{ $filters.fixNumber(info.todayHbc) }}</div>
         </div>
         <div>
           <div class="text-12 text-[#909090] mb-5">{{ $t('home.text-3', {text: 'USDT'}) }}</div>

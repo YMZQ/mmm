@@ -21,21 +21,6 @@ const routes = [
     }
   },
   {
-    path: '/swap',
-    name: 'swap',
-    component: () => import('@/views/Swap/Index/Index.vue'),
-    meta: {
-      requireAuth: true
-    }
-  },{
-    path: '/swapRecords',
-    name: 'swapRecords',
-    component: () => import('@/views/Swap/Records/Index.vue'),
-    meta: {
-      requireAuth: true
-    }
-  },
-  {
     path: "/:pathMatch(.*)*", redirect: {name: "home"}
   },]
 

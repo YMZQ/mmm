@@ -126,9 +126,10 @@ const zh = {
     "text-6": "确认",
     "text-7": "选择收益类型",
   },
-
-
-
+  "transactionType1": "日化",
+  "transactionType2": "直推奖励",
+  "transactionType3": "绩效奖",
+  "transactionType4": "同级绩效奖",
 
 }
 export default zh;
