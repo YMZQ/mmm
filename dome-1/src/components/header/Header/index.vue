@@ -7,7 +7,8 @@
       </router-link>
     </template>
     <template #right>
-      <div class="connect-main flex">
+      <div class="connect-main flex items-center">
+        <img class="w-[24px] h-[24px]" @click="userPanel=!userPanel" src="@/assets/image/icon/icon-lang.png" alt="">
         <div class="connect-content flex items-center justify-center">
           <div class="flex items-center z-[2]" v-if="!username" @click="web3Log">{{ $t('连接钱包') }}</div>
           <div class="flex items-center z-[2]" v-else @click="userPanel=!userPanel">
@@ -18,7 +19,6 @@
         <!--        <van-popover v-model="showPopover" trigger="click" :actions="actions" @select="onSelect"-->
         <!--                     placement="bottom-end">-->
         <!--          <template #reference>-->
-        <img class="lang" @click="userPanel=!userPanel" src="@/assets/image/icon/icon-lang.png" alt="">
         <!--          </template>-->
         <!--        </van-popover>-->
       </div>
@@ -130,11 +130,6 @@ onMounted(() => {
 
 
 
-.lang {
-  margin-top: 2px;
-  width: 30px;
-  height: 30px;
-}
 
 .menu {
   margin-top: 2px;
@@ -144,9 +139,9 @@ onMounted(() => {
 
 .van-nav-bar-background-red {
   //border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  //background: #0B0501;
   //box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
-
+  background: rgba(0, 0, 0, 0.40);
+  backdrop-filter: blur(10px);
 }
 
 .connect-main {
@@ -155,17 +150,17 @@ onMounted(() => {
   .connect-content {
     padding: 0 10px;
     min-width: 97px;
-    line-height: 32px;
+    line-height: 30px;
     text-align: center;
     height: 32px;
-    margin-left: 20px;
+    margin-left: 10px;
 
     font-size: 14px;
     box-sizing: border-box;
     border-radius: 24px;
-    border: 1px solid  #FFE605;
-    background: #010206;
-    box-shadow: 0  0  12px 0  rgba(255, 178, 29, 0.50) inset;
+    border: 1px solid  #fff;
+    //background: #010206;
+    //box-shadow: 0  0  12px 0  rgba(255, 178, 29, 0.50) inset;
 
     //
     //border-radius: 24px;

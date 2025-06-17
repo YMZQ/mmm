@@ -3,27 +3,10 @@
 </script>
 
 <template>
-  <div class="pt-25">
-    <h1 class="glitch" data-text="BYTE">BYTE</h1>
-    <div
-        class="-mt-20 pt-22  flex flex-col items-center justify-between w-full h-[375px]  bg-[url(@/assets/image/home/image-bg-0.png)] bg-cover bg-no-repeat bg-center">
-      <div>
-        <div class="text-14 text-[#FFFBF4] text-center">{{$t('home.introduction.text-0')}}</div>
-        <div class="my-20 price-box pb-15 text-center min-w-[245px]">
-          <div class="mb-14 w-full h-[1px] bg-[linear-gradient(270deg,rgba(255,255,255,0.00)_5.51%,#FFF_52.77%,rgba(255,255,255,0.00)_96.53%)]"></div>
-          <div class="text-20 font-bold text-style-1 mb-5">12.2</div>
-          <div>{{$t('home.introduction.text-1')}}(USDT)</div>
-        </div>
-      </div>
-      <div class="w-full">
-        <div class="flex justify-center">
-          <router-link to="subscription" class="button-style-1 inline-block  pb-10  text-center text-[#0B0B0B] text-16">
-            <div class="-mt-1 min-w-[135px] mb-9 w-full h-[1px] bg-[linear-gradient(270deg,rgba(255,255,255,0.00)_5.51%,#FFF_52.77%,rgba(255,255,255,0.00)_96.53%)]"></div>
-            <div>{{$t('home.introduction.text-2')}}</div>
-          </router-link>
-        </div>
-        <div class="w-full h-[35px] bg-[linear-gradient(180deg,rgba(13,8,1,0.00)_0%,#0D0801_100%)]"></div>
-      </div>
+  <div class="pt-25 px-16 pb-[101px] flex items-end w-full h-[667px]  bg-[url(@/assets/image/home/image-bg-0-0.png)] bg-cover bg-no-repeat bg-center">
+    <div class="text-center py-18 px-10 bg-[rgba(255,255,255,0.05)] rounded-sm backdrop-blur-[30px]">
+      <div class="text-18 font-bold mb-12">{{$t('home.introduction.title')}}</div>
+      <div class="text-14">{{$t('home.introduction.text-0')}}</div>
     </div>
   </div>
 </template>

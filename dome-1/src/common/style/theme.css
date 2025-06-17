@@ -1,5 +1,5 @@
 :root:root {
-    --van-nav-bar-background: #0c0700;
+    --van-nav-bar-background: transparent;
     --van-nav-bar-title-font-size: 17px;
     --van-nav-bar-title-text-color: #fff;
     --van-nav-bar-icon-color: #fff;
@@ -39,9 +39,10 @@
 
     --van-button-primary-border-color: transparent;
 
-    --van-button-default-background: linear-gradient(96deg, #FFE605 3.94%, #F90 97.26%);
-    --van-button-default-border-color: linear-gradient(96deg, #FFE605 3.94%, #F90 97.26%);
+    --van-button-default-background: linear-gradient(180deg, #FFB59F 0%, #EA3400 100%);
+    --van-button-default-border-color: linear-gradient(180deg, #FFB59F 0%, #EA3400 100%);
 
+    --van-field-error-message-color: #EA3400;
 
     .van-button--default {
         font-size: 16px;
@@ -49,7 +50,7 @@
         border: none;
         border-radius: 20px;
         height: 42px;
-        box-shadow: 0  0  4px 0  rgba(255, 163, 5, 0.50);
+        box-shadow: 0 0 4px 0 rgba(255, 163, 5, 0.50);
     }
 
 

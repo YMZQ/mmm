@@ -7,13 +7,13 @@
 }
 @font-face {
     font-family: "Sarala";
-    src: url('https://www.earthcoin.vip/resource/Sarala-Regular.ttf');
+    /*src: url('https://www.earthcoin.vip/resource/Sarala-Regular.ttf');*/
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: "RammettoOne-Regular";
-    src: url('https://www.earthcoin.vip/resource/RammettoOne-Regular.ttf');
+    /*src: url('https://www.earthcoin.vip/resource/RammettoOne-Regular.ttf');*/
     font-weight: normal;
     font-style: normal;
 }
@@ -27,7 +27,7 @@ body {
     --van-base-font: "Sarala";
     min-height: 100vh;
     color: #fff;
-    background: #0c0700;
+    background: #131213;
     font-size: 12px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;

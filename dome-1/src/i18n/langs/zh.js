@@ -42,8 +42,15 @@ const zh = {
     "welcome": "歡迎新用戶",
     "pleaseBindReferral": "請綁定您的推薦UID",
     "inputReferral": "輸入推薦UID",
+    "referralBindPrompt":"请绑定您的推荐推荐人",
+    "referralInputCode":"输入推荐码",
+    "referralConfirm":"确认",
     "bindActivate": "綁定激活"
   },
+
+
+
+
   "public": {
     "success": {
       "message": "提交成功"
@@ -85,9 +92,77 @@ const zh = {
 
   "home": {
     "introduction": {
-      "text-0": "像字节存储般稳定生息",
-      "text-1": "当前价格",
-      "text-2": "认购矿机"
+      "title": "什么是RedFox",
+      "text-0": "RedFox(RFX)是一个创新的社区驱动型Meme代币项目，结合了DeFi挖矿机制、多层级激励体系和健康可持续的经济模型。项目通过独特的”动静态3倍出局”机制、智能销毁算法和社区治理体系，旨在创建一个具有长期价值的Meme币生态系统，",
+    },
+    "vision": {
+      "title": "项目愿景",
+      "text-0": "打造最具社区凝聚力的Meme币项目，通过创新的经济模型解决传统Meme币缺乏实用性和可持续性的痛点，实现”娱乐+收益”的双重价值。",
+    },
+    "tokenomics": {
+      "title": "代币经济学",
+      "text-0": "基础参数",
+      "text-1": "代币名称",
+      "text-2": "总供应量",
+      "text-3": "{number}亿枚",
+      "text-4": "链",
+      "text-5": "合约: 完全去中心化，权限丢弃",
+      "text-6": "税务机制",
+      "text-7": "买入",
+      "text-8": "{number-0}%，{number-1}%添加流动性池;",
+      "text-9": "卖出",
+      "text-10": "{number-0}%，其中{number-1}%排行榜奖励，{number-2}%风险储备金，{number-3}%项目运营，{number-4}%回流底池",
+      "text-11": "流动性池管理",
+      "text-12": "初始流动性:{number-0}% {text-0} +{number-1}% {text-1},自动做市商(AMM) ,算法每日动态销毁机制",
+    },
+    "businessModel": {
+      "title": "核心业务模型",
+      "text-0": "静态挖矿系统",
+      "text-1": "最低入金",
+      "text-2": "{text}出局机制",
+      "text-3": "{number}倍回报自动退出",
+      "text-4": "动态激励体系",
+      "text-5": "代数奖励结果",
+      "text-6": "代数",
+      "text-7": "奖励比例",
+      "text-8": "累计入金要求",
+      "text-9": "代",
+      "text-10": "代数奖励结果",
+      "text-11": "个人持币榜",
+      "text-12": "LP排行榜",
+      "text-13": "团队TOP20"
+    },
+    "architecture": {
+      "title": "技术架构",
+      "text-0": "智能合约体系",
+      "text-1": "主合约",
+      "text-2": "处理核心代币逻辑",
+      "text-3": "挖矿合约",
+      "text-4": "管理静态收益分配",
+      "text-5": "奖励合约",
+      "text-6": "处理动态代数奖励",
+      "text-7": "健康指数合约",
+      "text-8": "实时监控系统稳定性",
+      "text-9": "关键创新机制",
+      "text-10": "健康指数分级调控",
+      "text-11": "HI >1.5: 正常运营0.8≤ HI<1.5:释放率降低10% HI<0.8:额外20%卖出税(全销毁)",
+      "text-12": "自动回购策略",
+      "text-13": "每日回购{number-0}%流通量{number-1}%销毁，{number-2}%进入持币奖励池",
+    },
+    "highlights": {
+      "title": "投资亮点",
+      "text-0": "智能合约体系",
+      "text-1": "三重收益模型",
+      "text-2": "静态挖矿+动态奖励+持币分红",
+      "text-3": "抗脆弱设计",
+      "text-4": "健康指数自动调节",
+      "text-5": "社区飞轮",
+      "text-6": "上下9代推荐体系形成增长闭环",
+      "text-7": "通缩机制",
+      "text-8": "动态销毁+回购燃烧",
+      "text-9": "全透明",
+      "text-10": "合约开源，权限丢弃",
+      "text-11": "立即参与",
     },
     "market": {
       "title": "行情",

@@ -70,7 +70,7 @@ onMounted(() => {
   <van-popup v-model:show="visible" round position="top" class="popup-info"
              :overlay-style="{ backgroundColor: 'transparent'}">
     <div class="p-15 flex max-w-[375px] mx-auto">
-      <div class="w-[154px] bg-[#241d15] mr-10 rounded-[20px] pt-24 px-10 pb-20">
+      <div class="w-[154px] bg-[rgba(255,255,255,0.20)] mr-10 rounded-[20px] pt-24 px-10 pb-20">
         <div class="flex items-center justify-center">
           <img class="w-[18px] h-[18px] mr-8" src="@/assets/image/icon/user.svg" alt="">
           <div class="text-12 font-500">{{ uid }}</div>
@@ -78,7 +78,7 @@ onMounted(() => {
                src="@/assets/image/icon/icon-copy-1.png" alt="">
         </div>
         <div
-            class="bg-[#3a342c] py-16 px-15 rounded-[100px] mt-20 mb-18  text-12 font-500 flex items-center justify-center">
+            class="bg-[#161616] py-16 px-15 rounded-[100px] mt-20 mb-18  text-12 font-500 flex items-center justify-center">
           <img class="w-[16px] h-[16px] mr-8" src="@/assets/image/icon/icon-wallet-1.png" alt="">
           <div>{{ $filters.prefix(username, 3, 3) }}</div>
           <img v-if="username" @click="copyToClipboard(username)" class="w-[12px] h-[12px] ml-13"
@@ -88,12 +88,12 @@ onMounted(() => {
           {{ $t('auth.disconnect') }}
         </div>
       </div>
-      <div class="flex-1 border border-solid border-[#B1A899] pt-10 pl-16 pr-12 rounded-[20px]">
-        <img class="w-[32px] h-[32px] mx-auto mb-20" src="@/assets/image/icon/icon-lang.png" alt="">
+      <div class="flex-1 border border-solid border-[#ffb59f] pt-10 pl-16 pr-12 rounded-[20px]">
+        <img class="w-[24px] h-[24px] mx-auto mb-20" src="@/assets/image/icon/icon-lang.png" alt="">
         <div class="grid grid-cols-2 gap-[10px]">
           <div v-for="item in actions" @click="onSelect(item)"
                class="text-13 mb-10 flex items-center px-6 py-6"
-               :class="{'text-[#000] rounded-[50px] bg-[linear-gradient(96deg,#FFE605_3.94%,#F90_97.26%)]':item.code===language}"
+               :class="{'text-[#fff] rounded-[50px] bg-[linear-gradient(180deg,#FFB59F_0%,#EA3400_100%)]':item.code===language}"
           >
             {{ item.text }}
           </div>

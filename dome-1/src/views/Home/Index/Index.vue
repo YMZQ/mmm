@@ -5,10 +5,12 @@ import {storeToRefs} from 'pinia';
 import {useRouter} from 'vue-router';
 
 import Introduction from './components/introduction.vue'
-import Market from './components/market.vue'
-import MyMiners from './components/myMiners.vue'
-import MyTeam from './components/myTeam.vue'
-import MyReferrals from './components/myReferrals.vue'
+import Vision from './components/vision.vue'
+import Tokenomics from './components/tokenomics.vue'
+import BusinessModel from './components/businessModel.vue'
+import Architecture from './components/architecture.vue'
+import Highlights from './components/highlights.vue'
+
 
 
 // 路由和 Store
@@ -41,17 +43,20 @@ watch(() => user.value.username, updateCodeIfNeeded);
     <section id="introduction">
       <Introduction/>
     </section>
-    <section id="introduction">
-      <Market/>
+    <section id="vision">
+      <Vision/>
     </section>
-    <section id="myMiners">
-      <MyMiners/>
+    <section id="tokenomics">
+      <Tokenomics/>
     </section>
-    <section id="myTeam">
-      <MyTeam/>
+    <section id="businessModel">
+      <BusinessModel/>
     </section>
-    <section id="myReferrals">
-      <MyReferrals/>
+    <section id="architecture">
+      <Architecture/>
+    </section>
+    <section id="highlights">
+      <Highlights/>
     </section>
   </div>
 </template>
