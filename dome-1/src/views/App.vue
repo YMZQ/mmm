@@ -3,12 +3,12 @@
     <router-view v-slot="{ Component }">
         <component :is="Component"/>
     </router-view>
-    <main-footer></main-footer>
+    <tab-bar></tab-bar>
   </div>
 </template>
 
 <script setup>
-import MainFooter from '@/components/footer/v-footer.vue'
+import TabBar from '@/components/TabBar/index.vue'
 </script>
 
 <style lang="less">

@@ -1,7 +1,6 @@
 <script setup>
 import {_getAssetRecords} from '@/service/feeding'
 
-
 const headerBackRef = ref(null); // 创建引用
 const headerHeight = ref(0);
 const dataList = ref([]);

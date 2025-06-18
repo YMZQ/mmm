@@ -19,6 +19,7 @@ module.exports = {
         "extra-accent": '#8a7e94',
       },
       fontSize: {
+        10: ['10px', '14px'],
         12: ['12px', '16px'],
         13: ['13px', '140%'],
         14: ['14px', '18px'],

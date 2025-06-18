@@ -42,15 +42,19 @@ const zh = {
     "welcome": "歡迎新用戶",
     "pleaseBindReferral": "請綁定您的推薦UID",
     "inputReferral": "輸入推薦UID",
-    "referralBindPrompt":"请绑定您的推荐推荐人",
-    "referralInputCode":"输入推荐码",
-    "referralConfirm":"确认",
+    "referralBindPrompt": "请绑定您的推荐推荐人",
+    "referralInputCode": "输入推荐码",
+    "referralConfirm": "确认",
     "bindActivate": "綁定激活"
   },
 
 
-
-
+  "tabBar": {
+    "deposit": "入金",
+    "leaderboard": "排行榜",
+    "community": "社区",
+    "assets": "资产",
+  },
   "public": {
     "success": {
       "message": "提交成功"
@@ -185,6 +189,97 @@ const zh = {
       "text-1": "团队业绩",
     }
   },
+
+  "deposit": {
+    "computingPower": {
+      "text-0": "个人总入金{text}",
+      "text-1": "今日产出{text}",
+      "text-2": "累计产出{text}",
+      "text-3": "剩余额度{text}",
+      "text-4": "请输入入金数量，最少{number}个{text}",
+      "text-5": "可用",
+      "all": "全部",
+      "submit": "获得算力",
+    },
+    "rules": {
+      "text-0": '用户入金的50%(静态控矿)',
+      "text-1": '组成LP，组成3形式:50%BNB购买REDFOX和剩余的50%BNB组成LP，给用户生成算力凭证。每日产币量根据用户的算力占比加权分配',
+      "text-2": "30%制度奖励分为2部分(动态奖励):",
+      "text-3": "10%从底池购买代币到排行榜业务合约，根据权重奖励（其中：个人持币榜3%，LP排行榜4%，团队持币地址TOP20 3%）；剩余20%制度奖励再分成2部分：10%BNB给用户分配代数奖励，10%回购代币给用户分配代数奖励",
+      "text-4": "风险储备金回购策略",
+      "text-5": "1. 每日固定回购0.1%的流通量（累计的静态每日产币量",
+      "text-6": "2.回购的0.1%代币中50%打入黑洞，50%进入排行榜合约",
+    },
+    "records": {
+      "title": '入金记录',
+      "text-0": '购买算力',
+      "text-1": '时间'
+    }
+  },
+  "community": {
+    "info": {
+      "text-0": "向上收益{text}",
+      "text-1": "向下收益{text}",
+      "text-2": "推广链接",
+      "text-3": "推广码",
+      "text-4": "{number}代",
+    },
+    "my": {
+      "title": '我的社区',
+      "text-0": '可拿代数',
+      "text-1": '个人入金',
+      "text-2": '社区入金',
+      "text-3": '有效',
+    }
+  },
+  "leaderboard":{
+    "tab":{
+      "text-0":"个人持币榜",
+      "text-1":"LP排行榜",
+      "text-2":"团队持币榜",
+    },
+    "text-0":"今日个人榜奖池",
+    "text-1":"今日个人榜奖池",
+    "text-2":"今日个人榜奖池",
+    "text-3":"排名",
+    "text-4":"占比",
+    "text-5":"持仓",
+    "text-6":"地址",
+  },
+  "assets": {
+    "health": {
+      "text-0": "健康",
+      "text-1": "预警",
+      "text-2": "危险",
+      "text-3": "当前指数",
+      "text-4": "健康指数 = 最近{number-0}日入金 ÷ 最近{number-0}日提现",
+      "text-5": "大于 {number-0}：健康",
+      "text-6": "{number-0} ～ {number-1}：预警（降低释放率 {number-2}%）",
+      "text-7": "小于 {number-0}：危险（触发自动调整，额外增加卖出税点{number-1}%，增加的税点全部回购销毁）",
+    },
+    "extract":{
+      "title":"提取",
+      "text-0":"请输入",
+      "text-1":"全部",
+      "text-2":"可用",
+      "all":"全部",
+      "submit":"确定",
+    },
+    "features": {
+      "extract": '提取',
+      "sell": '卖出',
+    }
+  },
+  "financialDetail": {
+    "title": "财务详情",
+    "text-0": "币种",
+    "text-1": "类型",
+    "text-2": "选择收益类型",
+    "text-3": "全部类型",
+    "text-4": "重置",
+    "text-5": "确定",
+    "text-6": "",
+  },
   "subscription": {
     "title": "认购矿机",
     "subscribe": {
@@ -229,14 +324,14 @@ const zh = {
     "text-4": "兑换",
   },
 
-  "transactionType0": "",
-  "transactionType1": "",
-  "transactionType2": "",
-  "transactionType3": "",
-  "transactionType4": "",
-  "transactionType5": "",
-  "transactionType6": "",
-  "transactionType7": "",
+  "transactionType0": "全部",
+  "transactionType1": "算力挖矿",
+  "transactionType2": "复投",
+  "transactionType3": "个人持币奖励",
+  "transactionType4": "LP排行奖励",
+  "transactionType5": "团队持币奖励",
+  "transactionType6": "代数奖",
+  "transactionType7": "收益领取",
   "transactionType8": "",
 }
 export default zh;

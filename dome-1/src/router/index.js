@@ -18,9 +18,53 @@ const routes = [
     }
   },
   {
-    path: '/subscription',
-    name: 'subscription',
-    component: () => import('@/views/Subscription/Index/Index.vue'),
+    path: '/deposit',
+    name: 'app',
+    component: App,
+    meta: {
+      requireAuth: false
+    },
+    children: [
+      {
+        path: '/deposit',
+        name: 'deposit',
+        component: () => import('@/views/Deposit/Index.vue'),
+        meta: {
+          requireAuth: false
+        }
+      },
+      {
+        path: '/leaderboard',
+        name: 'leaderboard',
+        component: () => import('@/views/Leaderboard/Index.vue'),
+        meta: {
+          requireAuth: false
+        }
+      },
+      {
+        path: '/community',
+        name: 'community',
+        component: () => import('@/views/Community/Index.vue'),
+        meta: {
+          requireAuth: false
+        }
+      },
+      {
+        path: '/assets',
+        name: 'assets',
+        component: () => import('@/views/assets/Index.vue'),
+        meta: {
+          requireAuth: false
+        }
+      }
+    ]
+  },
+
+
+  {
+    path: '/financialDetail',
+    name: 'financialDetail',
+    component: () => import('@/views/Assets/FinancialDetail/Index.vue'),
     meta: {
       requireAuth: false
     }
@@ -33,30 +77,7 @@ const routes = [
       requireAuth: false
     }
   },
-  {
-    path: '/swap',
-    name: 'swap',
-    component: () => import('@/views/Swap/Index/Index.vue'),
-    meta: {
-      requireAuth: false
-    }
-  },
-  {
-    path: '/swapRecords',
-    name: 'swapRecords',
-    component: () => import('@/views/Swap/Records/Index.vue'),
-    meta: {
-      requireAuth: true
-    }
-  },
-  {
-    path: '/assetsRecords',
-    name: 'assetsRecords',
-    component: () => import('@/views/Feeding/AssetsRecords/Index.vue'),
-    meta: {
-      requireAuth: true
-    }
-  },
+
   {
     path: "/:pathMatch(.*)*", redirect: {name: "home"}
   },]

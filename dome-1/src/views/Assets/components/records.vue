@@ -1,0 +1,39 @@
+<script setup>
+
+</script>
+
+<template>
+  <div class="px-16">
+    <router-link to="financialDetail" class="rounded-sm p-12 border border-solid border-[rgba(255,255,255,0.05)] flex items-center justify-between mb-10">
+      <div class="flex items-center">
+        <img class="w-[32px] h-[32px] mr-8" src="@/assets/image/token/rfx.png" alt="">
+        <div class="text-14 font-600">RFX</div>
+      </div>
+      <div class="flex items-center">
+        <div class="text-right">
+          <div class="text-14 font-600">{{ $filters.fixNumber(6545, 2) }}</div>
+          <div class="text-12 text-[#8C91A2]">≈82.256 USDT</div>
+        </div>
+        <img class="w-[20px] h-[20px] ml-30" src="@/assets/image/icon/icon-arrow-right.png" alt="">
+      </div>
+    </router-link>
+
+    <router-link to="financialDetail" class="rounded-sm p-12 border border-solid border-[rgba(255,255,255,0.05)] flex items-center justify-between">
+      <div class="flex items-center">
+        <img class="w-[32px] h-[32px] mr-8" src="@/assets/image/token/bnb.png" alt="">
+        <div class="text-14 font-600">BNB</div>
+      </div>
+      <div class="flex items-center">
+        <div class="text-right">
+          <div class="text-14 font-600">{{ $filters.fixNumber(6545, 2) }}</div>
+          <div class="text-12 text-[#8C91A2]">≈82.256 USDT</div>
+        </div>
+        <img class="w-[20px] h-[20px] ml-30" src="@/assets/image/icon/icon-arrow-right.png" alt="">
+      </div>
+    </router-link>
+  </div>
+</template>
+
+<style scoped lang="less">
+
+</style>

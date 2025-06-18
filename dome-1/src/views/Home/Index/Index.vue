@@ -38,7 +38,7 @@ watch(() => user.value.username, updateCodeIfNeeded);
 </script>
 
 <template>
-  <div class="pt-[46px] overflow-hidden">
+  <div class="overflow-hidden">
     <Header ref="header"></Header>
     <section id="introduction">
       <Introduction/>

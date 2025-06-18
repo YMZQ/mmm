@@ -5,6 +5,13 @@
     --van-nav-bar-icon-color: #fff;
     --van-nav-bar-arrow-size: 22px;
 
+    --van-tabbar-height: 56px;
+    --van-tabbar-item-text-color: #FFF;
+    --van-tabbar-item-active-color: #FFF;
+    --van-tabbar-background: #161616;
+    --van-tabbar-item-active-background: transparent;
+
+
     --van-swipe-indicator-active-background: #F7931E;
     --van-skeleton-paragraph-height: 22px;
     --van-skeleton-paragraph-background: #dcdee0;
@@ -22,10 +29,7 @@
     --van-stepper-radius: 0;
     --van-empty-description-color: #848e9c;
 
-    --van-tabbar-height: 68px;
-    --van-tabbar-item-text-color: #FFF;
-    --van-tabbar-background: rgba(255, 255, 255, 0.10);
-    --van-tabbar-item-active-background: transparent;
+
 
     --van-field-input-text-color: #fff;
 
@@ -46,7 +50,7 @@
 
     .van-button--default {
         font-size: 16px;
-        color: #120C01;
+        color: #fff;
         border: none;
         border-radius: 20px;
         height: 42px;
@@ -58,7 +62,7 @@
     --van-cell-group-background: transparent;
     --van-cell-vertical-padding: 0;
     --van-cell-horizontal-padding: 0;
-    --van-field-placeholder-text-color: #787064;
+    --van-field-placeholder-text-color: #8C91A2;
 
     .van-field__label {
         --van-padding-base: 9px;
@@ -66,9 +70,9 @@
     }
 
     .van-cell__value {
-        /*background-color: #1c0430;*/
+        background-color: rgba(255, 255, 255, 0.10);
         /*border: 1px solid #504134;*/
-        /*border-radius: 8px;*/
+        border-radius: 4px;
 
         .van-field__body {
             height: 42px;
@@ -87,12 +91,13 @@
         .van-field__button {
             padding-right: 10px;
             font-size: 16px;
-            color: #FFA800;
+            color: #fff;
         }
     }
 
     --van-tab-text-color: #ACACAC;
-    --van-tab-active-text-color: #130217;
+    --van-tab-active-text-color: #fff;
+
     --van-tab-font-size: 12px;
     --van-tabs-nav-background: rgba(255, 255, 255, 0.10);
     --van-tabs-bottom-bar-width: 0;

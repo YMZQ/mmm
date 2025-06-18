@@ -1,0 +1,55 @@
+<script setup>
+
+</script>
+
+<template>
+  <div class="px-16 pt-20 mb-30">
+    <div class="p-20 rounded-sm bg-[rgba(255,255,255,0.05)] backdrop-blur-[40px] relative z-[2]">
+      <div class="flex items-center justify-between mb-20">
+        <div class="text-16 font-600">UID: 658855</div>
+        <div class="text-12 bg-[#161616] rounded-md py-7 px-30">{{$t('community.info.text-4',{number:9})}}</div>
+      </div>
+      <div class="grid grid-cols-2">
+        <div>
+          <div class="text-16 font-600 mb-4">{{ $filters.fixNumber(100,4) }}</div>
+          <div class="text-12 text-[#CED0D8]">{{$t('community.info.text-0',{text:'BNB'})}}</div>
+        </div>
+        <div class="pr-20 text-right">
+          <div class="text-16 font-600 mb-4">{{ $filters.fixNumber(100,4) }}</div>
+          <div class="text-12 text-[#CED0D8]">{{$t('community.info.text-1',{text:'BNB'})}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="pb-20 pt-30 px-14 bg-[#161616] rounded-sm -mt-10">
+      <div class="text-12 flex items-center justify-between mb-16">
+        <div>
+          <div>{{$t('community.info.text-2')}}</div>
+          <div class="text-16 font-600 mt-8">http://dapp/i...?inviteAddr=</div>
+        </div>
+        <div class="bg-[#fff] p-6 rounded-[50%]">
+          <img class="w-[16px] h-[16px]" src="@/assets/image/icon/icon-copy.png" alt="">
+        </div>
+      </div>
+      <div class="text-12 flex items-center justify-between">
+        <div>
+          <div>{{$t('community.info.text-3')}}</div>
+          <div class="text-16 font-600 mt-8">123456</div>
+        </div>
+        <div class="bg-[#fff] p-6 rounded-[50%]">
+          <img class="w-[16px] h-[16px]" src="@/assets/image/icon/icon-copy.png" alt="">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</template>
+
+<style scoped lang="less">
+.text-style-1 {
+  font-weight: 500;
+  background: linear-gradient(180deg, #FFB59F 0%, #EA3400 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>

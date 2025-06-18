@@ -35,7 +35,7 @@ import {_register} from '@/service/user'
 const {proxy} = getCurrentInstance();
 const store = appStore();
 const emit = defineEmits(['nextStep']);
-const show = ref(true);
+const show = ref(false);
 const form = reactive({
   signature: '', //
   username: '', //
