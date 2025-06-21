@@ -43,7 +43,7 @@ const resetFun = async () => {
              class="py-20 border-b border-solid border-[rgba(255,255,255,0.05)]">
           <div class="text-14 font-500 mb-14 flex items-center justify-between">
             <div>{{ $t('deposit.records.text-0') }}</div>
-            <div class="text-style-1">{{ item.stype === 0 ? '-' : '+' }}{{ $filters.fixNumber(item.num, 4) }} {{$filters.upperCase(item.coin) }}</div>
+            <div class="text-style-1">{{ $filters.fixNumber(item.pay_amount, 4) }}BNB</div>
           </div>
           <div class="text-12 flex items-center justify-between">
             <div class="text-[#8C91A2]">{{ $t('deposit.records.text-1') }}</div>

@@ -23,7 +23,7 @@ const getImageUrl = (name) => {
       <div  v-for="item in directList" class="py-20 border-b border-solid border-[rgba(255,255,255,0.05)]">
         <div class="text-14 font-500 mb-16 flex items-center justify-between">
           <div class="flex items-center">
-            <div>UID:5648</div>
+            <div>UID:{{item.uid}}</div>
             <div class="ml-4 inline-block px-6 py-2 bg-[rgba(255,255,255,0.20)] rounded-[2px] text-[#EA3400] text-12">
               {{ $t('community.my.text-3') }}
             </div>
@@ -38,7 +38,7 @@ const getImageUrl = (name) => {
             <div class="text-[#8C91A2]">{{ $t('community.my.text-1') }}</div>
           </div>
           <div>
-            <div class="font-600 mb-4">{{$filters.fixNumber(item.thisAmount,4)}} BNB</div>
+            <div class="font-600 mb-4">{{$filters.fixNumber(item.teamAmount,4)}} BNB</div>
             <div class="text-[#8C91A2]">{{ $t('community.my.text-2') }}</div>
           </div>
         </div>

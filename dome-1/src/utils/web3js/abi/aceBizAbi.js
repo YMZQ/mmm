@@ -122,31 +122,6 @@ const aceBizAbi =[
 			},
 			{
 				"indexed": false,
-				"internalType": "address",
-				"name": "coinAddress",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "BreedingEvent",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "payAmount",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
 				"internalType": "uint256",
 				"name": "lpAmount",
 				"type": "uint256"
@@ -154,39 +129,26 @@ const aceBizAbi =[
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "buyEacAmount",
+				"name": "buyCoinRankingListAmount",
 				"type": "uint256"
 			},
-			{
-				"indexed": false,
-				"internalType": "address",
-				"name": "coinAddress",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "ExchangeBreedingEvent",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "payAmount",
+				"name": "bnbLevelAmount",
 				"type": "uint256"
 			},
 			{
 				"indexed": false,
-				"internalType": "address",
-				"name": "coinAddress",
-				"type": "address"
+				"internalType": "uint256",
+				"name": "buyCoinLevelAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "riskReserveAmount",
+				"type": "uint256"
 			},
 			{
 				"indexed": false,
@@ -195,7 +157,7 @@ const aceBizAbi =[
 				"type": "address"
 			}
 		],
-		"name": "IdoEvent",
+		"name": "InEvent",
 		"type": "event"
 	},
 	{
@@ -234,31 +196,43 @@ const aceBizAbi =[
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "token",
-				"type": "address"
-			},
-			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "totalAmount",
+				"name": "releaseAmount",
 				"type": "uint256"
 			},
 			{
 				"indexed": false,
-				"internalType": "uint256[]",
-				"name": "distributedAmounts",
-				"type": "uint256[]"
+				"internalType": "uint256",
+				"name": "burnAmount",
+				"type": "uint256"
 			},
 			{
 				"indexed": false,
-				"internalType": "address[]",
-				"name": "recipients",
-				"type": "address[]"
+				"internalType": "uint256",
+				"name": "buyPayBnbAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "rfxBurnAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "rankingAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "mark",
+				"type": "string"
 			}
 		],
-		"name": "TokensDistributed",
+		"name": "TriggeEvent",
 		"type": "event"
 	},
 	{
@@ -275,89 +249,75 @@ const aceBizAbi =[
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "bnbLevelRatio",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
-				"internalType": "address payable[]",
-				"name": "addresses",
+				"internalType": "address[]",
+				"name": "fromList",
 				"type": "address[]"
-			}
-		],
-		"name": "addCollectionAddresses",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "payAmount",
-				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "addLpRatio",
+				"name": "pwd",
 				"type": "uint256"
 			},
 			{
 				"internalType": "address",
-				"name": "payCoinAddress",
+				"name": "addr",
 				"type": "address"
 			},
 			{
 				"internalType": "address",
-				"name": "eacAddress",
+				"name": "contractAddress",
 				"type": "address"
 			},
 			{
 				"internalType": "uint256",
-				"name": "deadLine",
+				"name": "amount",
 				"type": "uint256"
-			},
-			{
-				"internalType": "bytes",
-				"name": "sign",
-				"type": "bytes"
 			}
 		],
-		"name": "addLpBreeding",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "payAmount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "coinAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "deadLine",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bytes",
-				"name": "sign",
-				"type": "bytes"
-			}
-		],
-		"name": "breeding",
+		"name": "botHandleFromBatch",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
 		"inputs": [],
-		"name": "clearAllAddresses",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"name": "buyCoinLevelRatio",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "buyCoinRankingListRatio",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -374,32 +334,13 @@ const aceBizAbi =[
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"inputs": [],
+		"name": "collectionRatio",
+		"outputs": [
 			{
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
-			}
-		],
-		"name": "collectionAddresses",
-		"outputs": [
-			{
-				"internalType": "address payable",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getAllCollectionAddresses",
-		"outputs": [
-			{
-				"internalType": "address[]",
-				"name": "",
-				"type": "address[]"
 			}
 		],
 		"stateMutability": "view",
@@ -445,6 +386,11 @@ const aceBizAbi =[
 				"type": "uint256"
 			},
 			{
+				"internalType": "uint256",
+				"name": "isTrigger",
+				"type": "uint256"
+			},
+			{
 				"internalType": "address",
 				"name": "coinAddress",
 				"type": "address"
@@ -460,27 +406,9 @@ const aceBizAbi =[
 				"type": "bytes"
 			}
 		],
-		"name": "ido",
+		"name": "inAmount",
 		"outputs": [],
 		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "contractAddress",
-				"type": "address"
-			}
-		],
-		"name": "inAssets",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -499,6 +427,19 @@ const aceBizAbi =[
 		"name": "initialize",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "lpRatio",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -540,6 +481,11 @@ const aceBizAbi =[
 			{
 				"internalType": "uint256",
 				"name": "fee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "isTrigger",
 				"type": "uint256"
 			},
 			{
@@ -587,16 +533,35 @@ const aceBizAbi =[
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"inputs": [],
+		"name": "pairAddress",
+		"outputs": [
 			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
+				"internalType": "address",
+				"name": "",
+				"type": "address"
 			}
 		],
-		"name": "removeCollectionAddress",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "releaseMapping",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -604,6 +569,32 @@ const aceBizAbi =[
 		"name": "renounceOwnership",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "rfxAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "riskReserveRatio",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -615,6 +606,32 @@ const aceBizAbi =[
 			}
 		],
 		"name": "setAdminSystemAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "ratio",
+				"type": "uint256"
+			}
+		],
+		"name": "setbnbLevelRatio",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "ratio",
+				"type": "uint256"
+			}
+		],
+		"name": "setbuyCoinLevelRatio",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -635,12 +652,105 @@ const aceBizAbi =[
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "ratio",
+				"type": "uint256"
+			}
+		],
+		"name": "setcollectionRatio",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "ratio",
+				"type": "uint256"
+			}
+		],
+		"name": "setlpRatio",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "setpairAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "setrfxAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "ratio",
+				"type": "uint256"
+			}
+		],
+		"name": "setriskReserveRatio",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "newOwner",
 				"type": "address"
 			}
 		],
 		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "releaseAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "burnAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "buyPayBnbAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "mark",
+				"type": "string"
+			}
+		],
+		"name": "trigger",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"

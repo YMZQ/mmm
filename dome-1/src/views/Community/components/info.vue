@@ -9,13 +9,12 @@ const props = defineProps({
   shareLink: {
     type: String
   },
-  teamInfo: {
+  info: {
     type: Object,
     default: () => ({
-      maxAmount: 0,
-      minAmount: 0,
-      thisAmount: 0,
-      grade: 0
+      upBnbProfit: 0,
+      downBnbProfit: 0,
+      level: 0,
     })
   }
 })
@@ -26,15 +25,15 @@ const props = defineProps({
     <div class="p-20 rounded-sm bg-[rgba(255,255,255,0.05)] backdrop-blur-[40px] relative z-[2]">
       <div class="flex items-center justify-between mb-20">
         <div class="text-16 font-600">UID: {{user.uid}}</div>
-        <div class="text-12 bg-[#161616] rounded-md py-7 px-30">{{$t('community.info.text-4',{number:9})}}</div>
+        <div class="text-12 bg-[#161616] rounded-md py-7 px-30">{{$t('community.info.text-4',{number:info.level})}}</div>
       </div>
       <div class="grid grid-cols-2">
         <div>
-          <div class="text-16 font-600 mb-4">{{ $filters.fixNumber(100,4) }}</div>
+          <div class="text-16 font-600 mb-4">{{ $filters.fixNumber(info.upBnbProfit,4) }}</div>
           <div class="text-12 text-[#CED0D8]">{{$t('community.info.text-0',{text:'BNB'})}}</div>
         </div>
         <div class="pr-20 text-right">
-          <div class="text-16 font-600 mb-4">{{ $filters.fixNumber(100,4) }}</div>
+          <div class="text-16 font-600 mb-4">{{ $filters.fixNumber(info.downBnbProfit,4) }}</div>
           <div class="text-12 text-[#CED0D8]">{{$t('community.info.text-1',{text:'BNB'})}}</div>
         </div>
       </div>

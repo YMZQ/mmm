@@ -14,34 +14,40 @@ const balances = ref({
   bnbBalance: null
 })
 const depositInfo = ref({
-  breedingPrice: 0,
-  elpBreedingPrice: 0,
-  usdtBreedingPrice: 0,
-  bnbBreedingPrice: 0,
-  totalBreedingAmount: 0,
+  thisAmount: 0,
+  todayOutput: 0,
+  totalOutput: 0,
+  surplusAmount: 0,
+  minInAmount: 0,
 });
 
 async function getBalances(address) {
-  const nativePromise = Web3.getBalance(address)
-  const [bnbBalance] = await Promise.all([
-    nativePromise
-  ])
-  return {bnbBalance}
+  console.log('123123')
+  console.log(address)
+  const nativePromise =await Web3.getBalance(address)
+  console.log(nativePromise)
+  // const [bnbBalance] = await Promise.all([
+  //   nativePromise
+  // ])
+  // console.log(123123)
+  // console.log(bnbBalance)
+  // console.log(567)
+  // return {bnbBalance}
 }
 
 const fetchData = async () => {
   try {
     const [response] = await Promise.all([_getDeposit()]);
     Object.assign(depositInfo.value, {
-      breedingPrice: response.breedingPrice,
-      elpBreedingPrice: response.elpBreedingPrice,
-      usdtBreedingPrice: response.usdtBreedingPrice,
-      bnbBreedingPrice: response.bnbBreedingPrice,
-      totalBreedingAmount: response.totalBreedingAmount,
+      thisAmount: response.thisAmount,
+      todayOutput: response.todayOutput,
+      totalOutput: response.totalOutput,
+      surplusAmount: response.surplusAmount,
+      minInAmount: response.minInAmount,
     })
-
     if (user.value.username) {
-      balances.value = await getBalances(user.value.username)
+      let bnbBalances = await getBalances(user.value.username)
+      balances.value.bnbBalances = bnbBalances
     }
   } catch (error) {
     console.error("common.dataFetchFail", error);
@@ -54,7 +60,6 @@ const init = async () => {
 };
 
 
-
 onMounted(() => {
   init();
 });
@@ -64,7 +69,7 @@ onMounted(() => {
   <div class="">
     <Header ref="header"></Header>
     <section id="computingPower">
-      <ComputingPower :balances="balances"/>
+      <ComputingPower :balances="balances" :depositInfo="depositInfo"/>
     </section>
     <section id="rules">
       <Rules/>
