@@ -12,7 +12,6 @@ import Architecture from './components/architecture.vue'
 import Highlights from './components/highlights.vue'
 
 
-
 // 路由和 Store
 const router = useRouter();
 const store = appStore();
@@ -38,7 +37,7 @@ watch(() => user.value.username, updateCodeIfNeeded);
 </script>
 
 <template>
-  <div class="overflow-hidden">
+  <div class="overflow-hidden relative">
     <Header ref="header"></Header>
     <section id="introduction">
       <Introduction/>
@@ -58,6 +57,12 @@ watch(() => user.value.username, updateCodeIfNeeded);
     <section id="highlights">
       <Highlights/>
     </section>
+    <div class="fixed w-full left-0 bottom-20 px-16">
+      <router-link to="/deposit"
+                   class=" py-13 rounded-[50px] text-center  text-16 font-bold block bg-[linear-gradient(180deg,#FFB59F_0%,#EA3400_100%)]">
+        {{ $t('home.highlights.text-11') }}
+      </router-link>
+    </div>
   </div>
 </template>
 

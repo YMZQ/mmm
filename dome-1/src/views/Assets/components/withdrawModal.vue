@@ -1,13 +1,77 @@
 <script setup>
-const show = ref(true);
-const list = ref([{id: 0, text: 'USDT'}, {id: 1, text: 'LYB'}])
-const num = ref(0)
-const number = ref(0)
+import {fixNumber} from '@/utils'
+import {useI18n} from "vue-i18n";
+import {appStore} from "@/stores";
+import {storeToRefs} from "pinia";
+import {_sendOutAssets, _sendOutAssetsCallback} from "@/service/wallet";
+import Web3 from "@/utils/web3js/bnbWeb3";
+
+const {proxy} = getCurrentInstance();
+const {t} = useI18n();
+
+
+const store = appStore();
+const {user, address} = storeToRefs(store);
+const emit = defineEmits(['callback'])
+const props = defineProps({
+  assetList: {
+    type: Array,
+    default: () => []
+  }
+})
+
+const currencyInfo = ref({})
+watch(() => props.assetList, (newList) => {
+  if (newList.length > 0) {
+    currencyInfo.value = newList[0]
+  }
+}, {immediate: true})
+
+
+const show = ref(false);
+const list = ref([{id: 0, text: 'USDT'}, {id: 1, text: 'BNB'}])
+const number = ref('')
 const getImageUrl = (name) => {
   return new URL(`/src/assets/image/icon/${name}.png`, import.meta.url).href
 }
-const onSubmit = async () => {
+const setCurrencyInfo = (item) => {
+  number.value = ''
+  currencyInfo.value = item
+}
 
+
+const sendOutAssetsCallback = async (hash) => {
+  let result = await _sendOutAssetsCallback({
+    hash: hash
+  });
+  emit('callback')
+  proxy.$toast.success(t('public.success.message'));
+}
+const _Web3OutAssets = async (val) => {
+  const param = {
+    amount: val.amount,
+    nonce: val.nonce,
+    fee: val.fee,
+    orderNumber: val.orderNumber,
+    coinAddress: val.coinAddress,
+    deadline: val.deadline,
+    sign: val.sign,
+  }
+  const result = await Web3.sendOutAssets(param);
+  if (result.status) {
+    await sendOutAssetsCallback(result.hash)
+  } else {
+    proxy.$toast.error(result.message)
+  }
+};
+
+const onSubmit = async (coin, num) => {
+  if (Number(num) <= 0) {
+    return proxy.$toast.error(t('popup.insufficientBalance', {text: coin}));
+  }
+  let result = await _sendOutAssets({coin: coin, num: fixNumber(num)});
+  proxy.$toast.loading(t('common.contractRequesting'));
+  await _Web3OutAssets(result)
 };
 </script>
 
@@ -20,25 +84,23 @@ const onSubmit = async () => {
       </div>
       <div class="flex items-center mb-25">
         <div
-            v-for="item in list"
+            v-for="item in assetList"
             :key="item.id"
             class="py-8 px-10 text-14 font-500  mr-12 rounded-[8px] w-[96px] text-center"
-            :class="num === item.id ? 'bg-[#f57753]' : 'bg-[#2d2d2d]'"
-            @click="num = item.id"
+            :class="currencyInfo.id === item.id ? 'bg-[#f57753]' : 'bg-[#2d2d2d]'"
+            @click="setCurrencyInfo(item)"
         >
           {{ item.text }}
         </div>
       </div>
       <van-form @submit="onSubmit">
-        <van-field class="mb-5" :border="false"
-                   v-model="number" type="number"
-                   :placeholder="$t('assets.extract.text-0')">
+        <van-field class="mb-5" :border="false" v-model="number" type="number" :placeholder="$t('assets.extract.text-0')">
           <template #button>
             <div>{{ $t('assets.extract.all') }}</div>
           </template>
         </van-field>
         <div class="mb-24 mt-10 flex">
-          <span class="text-style-1">{{ $t('assets.extract.text-2') }}:1000</span>
+          <span class="text-style-1">{{ $t('assets.extract.text-2') }}:{{ $filters.fixNumber(100) }}</span>
         </div>
         <van-button class="w-full  text-16 text-[#1C3B5E] font-600 relative">
           {{ $t('assets.extract.submit') }}

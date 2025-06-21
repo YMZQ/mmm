@@ -1,12 +1,12 @@
 <template>
   <van-pull-refresh v-model="isRefresh" @refresh="refreshClick"
-                    :pulling-text="$t('下拉即可刷新...')"
-                    :loosing-text="$t('释放即可刷新...')"
-                    :loading-text="$t('加载中...')"
-                    :success-text="$t('数据刷新成功')"
+                    :pulling-text="$t('common.pullToRefresh')"
+                    :loosing-text="$t('common.releaseToRefresh')"
+                    :loading-text="$t('common.loading')"
+                    :success-text="$t('common.refreshSuccess')"
   >
     <!--                    { minHeight: `calc(100vh - ${headerHeight}px)` }-->
-    <van-list v-model:loading="isListLoading" :loading-text="$t('加载中...')" :finished="isFinished"
+    <van-list v-model:loading="isListLoading" :loading-text="$t('common.loading')" :finished="isFinished"
               :offset="state.offset" finished-text="" :immediate-check="false" @load="onLoad">
       <slot></slot>
       <div v-if="!isListLoading && state.nodata === true">
@@ -45,7 +45,7 @@ const props = defineProps({
       empty: {
         type: Object,
         default: () => {
-          return {image:'img',description:'暂无数据'}
+          return {image:'img',description:'common.noData'}
         }
       },
       getListApi: {

@@ -1,45 +1,33 @@
 const en = {
-  "暂无数据": "No data available",
-  "暂未开放": "Not yet open",
-  "加载中...": "Loading...",
-  "下拉即可刷新...": "Pull down to refresh...",
-  "释放即可刷新...": "Release to refresh...",
-  "数据刷新成功": "Data refreshed successfully",
-  "复制成功": "Copy successful",
-  "复制失败": "Copy failed",
-  "请先连接钱包": "Please connect your wallet first",
-  "服务请求失败": "Service request failed",
-  "请连接钱包": "Please connect your wallet",
-  "连接钱包": "Connect wallet",
-  "钱包签名失败": "Wallet signature failed",
-  "合约授权失败": "Contract authorization failed",
-  "合约授权中": "Contract authorization in progress",
-  "合约请求中": "Contract request in progress",
-  "合约交易失败": "Contract transaction failed",
-  "余额不足": "Insufficient balance",
-  "确定": "Confirm",
-  "登录中": "Logging in",
-  "取消": "Cancel",
-  "提交成功": "Submission successful",
-  "钱包账号已切换，请重新连接钱包": "Wallet account has been switched, please reconnect your wallet",
-  "连接超时，请检查钱包网络是否正常，刷新重试": "Connection timeout, please check if your wallet network is normal, refresh and try again",
-  "钱包账户获取失败，请检查钱包网络是否正常，刷新重试或重新操作": "Failed to retrieve wallet account, please check your wallet network, refresh and try again or redo the operation",
-  "获取失败，请检查钱包网络是否正常，刷新重试或重新操作": "Failed to retrieve, please check your wallet network, refresh and try again or redo the operation",
-  "{coin}获取失败，请检查钱包网络是否正常，刷新重试或重新操作": "Failed to retrieve {coin}, please check your wallet network, refresh and try again or redo the operation",
-  "{coin}余额不足": "Insufficient balance of {coin}",
-
-  "menu-0": "About",
-  "menu-1": "DAO",
-  "menu-2": "EAC",
-  "menu-3": "Road to Wealth",
-  "menu-4": "Roadmap",
-  "menu-5": "Partners",
-  "menu-6": "",
-  "menu-7": "",
-  "menu-8": "",
-  "menu-9": "",
-  "menu-10": "",
+  "common": {
+    "loading": "Loading...",
+    "releaseToRefresh": "Release to refresh...",
+    "pullToRefresh": "Pull to refresh...",
+    "refreshSuccess": "Data refreshed successfully",
+    "noData": "No data available",
+    "notAvailable": "Not available yet",
+    "copySuccess": "Copied successfully",
+    "copyFail": "Copy failed",
+    "walletNotConnected": "Please connect your wallet first",
+    "requestFailed": "Service request failed",
+    "connectWallet": "Please connect wallet",
+    "walletConnect": "Connect wallet",
+    "walletSignFail": "Wallet signature failed",
+    "contractApproveFail": "Contract approval failed",
+    "contractApproving": "Approving contract",
+    "contractRequesting": "Requesting contract",
+    "contractTxFail": "Contract transaction failed",
+    "insufficientBalance": "Insufficient balance",
+    "confirm": "Confirm",
+    "loggingIn": "Logging in",
+    "cancel": "Cancel",
+    "submitSuccess": "Submitted successfully",
+    "dataFetchFail": "Data fetch failed",
+    "initDataFail": "Initialization failed",
+    "requestFail": "Request failed"
+  },
   "auth": {
+    "connectWalletPrompt": "Please connect your wallet first",
     "login": "Login",
     "register": "Register",
     "logout": "Logout",
@@ -48,37 +36,39 @@ const en = {
     "confirm": "Confirm",
     "disconnect": "Disconnect",
     "enterInvitationCode": "Please enter invitation code",
-    "bindInvitation": "Bind invitation relationship",
+    "bindInvitation": "Bind invitation",
     "welcome": "Welcome new user",
     "pleaseBindReferral": "Please bind your referral UID",
-    "inputReferral": "Enter referral UID",
-    "bindActivate": "Bind and activate"
+    "inputReferral": "Input referral UID",
+    "referralBindPrompt": "Please bind your referrer",
+    "referralInputCode": "Enter referral code",
+    "referralConfirm": "Confirm",
+    "bindActivate": "Bind activation"
   },
-
-  "tabBar1": "Home",
-  "tabBar2": "Mystery Box",
-  "tabBar3": "Games",
-  "tabBar4": "My Account",
-
+  "tabBar": {
+    "deposit": "Deposit",
+    "leaderboard": "Leaderboard",
+    "community": "Community",
+    "assets": "Assets"
+  },
   "public": {
     "success": {
-      "message": "Submission successful"
+      "message": "Submitted successfully"
     },
     "tip": {
       "success": "Success",
       "failure": "Failure"
     },
     "copy": {
-      "success": "Copy successful",
+      "success": "Copied successfully",
       "failure": "Copy failed"
     }
   },
-
   "popup": {
-    "insufficientBalance": "Insufficient balance of {text}",
+    "insufficientBalance": "{text} available balance insufficient",
     "recharge": {
       "title": "Recharge",
-      "placeholder": "Please enter recharge amount",
+      "placeholder": "Enter recharge amount",
       "all": "All",
       "walletAvailable": "Wallet available",
       "accountBalance": "Account balance",
@@ -87,12 +77,12 @@ const en = {
     },
     "receive": {
       "title": "Receive",
-      "placeholder": "Please enter the amount to receive",
-      "available": "Available to receive",
+      "placeholder": "Enter receive amount",
+      "available": "Available",
       "all": "All",
       "walletAvailable": "Wallet available",
       "confirm": "Receive",
-      "insufficientBalance": "Insufficient balance to receive"
+      "insufficientBalance": "Insufficient receivable balance"
     },
     "tip": {
       "cancelButtonText": "Cancel",
@@ -101,117 +91,215 @@ const en = {
   },
   "home": {
     "introduction": {
-      "text-0": "Welcome to Elephant Eco",
-      "text-1": "Protecting elephants, safeguarding the EAC",
-      "text-2": "On the African savannah, environmentalists have discovered that elephants are natural allies in climate change - each elephant can store about 9000 tons of carbon in its lifetime, equivalent to 30000 trees. However, approximately 20000 elephants still die each year due to poaching and habitat loss.",
-      "text-3": "In 2023, biologist Emma Kovac and blockchain developer Raj Patel proposed an innovative solution: combining elephant conservation with Web3 to create \"Elephant Eco\". They tokenize the ecological value of elephants through blockchain and issue EAC tokens (EAC) to connect global environmentalists, investors, and local communities.",
-      "text-4": "In just 6 months, the project successfully protected 47 elephants in Zambia, tracking their ecological contributions in real-time through IoT collars and converting them into token rewards. The local community receives income, while investors receive carbon credit returns.",
-      "text-5": "Today, elephant ecology is expanding to Kenya and Botswana, with the goal of protecting 1000 elephants by 2025, which is equivalent to a natural solution to build 9 million tons of carbon sink capacity. This is not only a protective action, but also a revolution in using blockchain technology to address the climate crisis.",
-      "text-6": "Join Us",
+      "title": "What is RedFox",
+      "text-0": "RedFox (RFX) is an innovative community-driven Meme token project combining DeFi mining mechanisms, multi-tier incentive systems, and a healthy sustainable economic model. The project uses the unique “move‑static 3× kill‑out” mechanism, smart burn algorithm, and community governance to build a long-term value Meme token ecosystem."
     },
-    "dao": {
-      "text-0": "Elephant Eco DAO",
-      "text-1": "Elephant Ecology is an innovative environmental project based on Web3 technology, which tokenizes elephant conservation behavior through blockchain and creates a sustainable ecosystem. The project will issue EAC tokens (EAC) to convert the ecological value of elephants into tradable digital assets, inspiring global communities to participate in environmental protection."
+    "vision": {
+      "title": "Project Vision",
+      "text-0": "To build the most cohesive community-driven Meme token project, solving the lack of utility and sustainability in traditional Meme tokens through an innovative economic model, achieving dual value of “entertainment + earnings.”"
     },
-    "earth": {
-      "text-0": "EAC Economics",
-      "text-1": "Total circulation",
-      "text-2": "{number}billion",
-      "text-3": "Circulation",
+    "tokenomics": {
+      "title": "Tokenomics",
+      "text-0": "Basic Parameters",
+      "text-1": "Token Name",
+      "text-2": "Total Supply",
+      "text-3": "{number} hundred million tokens",
+      "text-4": "Chain",
+      "text-5": "Contract: Fully decentralized, admin renounced",
+      "text-6": "Tax Mechanism",
+      "text-7": "Buy",
+      "text-8": "{number0}% to liquidity pool; {number1}% to liquidity provision",
+      "text-9": "Sell",
+      "text-10": "{number0}%, of which {number1}% leaderboard rewards, {number2}% risk reserve, {number3}% project operation, {number4}% returns to base pool",
+      "text-11": "Liquidity Pool Management",
+      "text-12": "Initial liquidity: {number0}% {text0} + {number1}% {text1}, AMM, auto daily burn mechanism"
     },
-    "roadWealth": {
-      "text-0": "The Way to Wealth",
-      "text-1": "Hold and earn",
-      "text-2": "Holding EAC, contributing to construction, and enjoying stable growth",
-      "text-3": "Buy",
-      "text-4": "Raising elephants",
-      "text-5": "Unlimited participation, doubling profits",
-      "text-6": "Feed immediately",
-      "text-7": "LP mining pool",
-      "text-8": "Unlimited participation, doubling profits",
-      "text-9": "Feed immediately",
+    "businessModel": {
+      "title": "Core Business Model",
+      "text-0": "Static mining system",
+      "text-1": "Minimum deposit",
+      "text-2": "{text} kill-out mechanism",
+      "text-3": "{number}× return auto exit",
+      "text-4": "Dynamic incentive system",
+      "text-5": "Generational reward result",
+      "text-6": "Generations",
+      "text-7": "Reward ratio",
+      "text-8": "Cumulative deposit requirement",
+      "text-9": "Generations",
+      "text-10": "Generational reward result",
+      "text-11": "Personal token holding board",
+      "text-12": "LP leaderboard",
+      "text-13": "Team TOP20"
     },
-    "roadMap": {
-      "text-0": "Roadmap",
-      "text-1": "Elephant Eco DAO Alliance takes full control of the project",
-      "text-2": "Elephant Eco DAO Alliance website launched",
-      "text-3": "Elephant Eco DAO Alliance Community Established, First Batch of 50 Elephants Protection Launched",
-      "text-4": "Open community proposal and voting",
-      "text-5": "Collaborate with other Web3 ecosystems on BSC",
-      "text-6": "Continuous market promotion and development",
-      "text-7": "Establish a business school",
-      "text-8": "Launch a simple Web3 game based on $EAC, support multilingual communities, hold offline summits/online events, and release NFTs with elephant themes",
-      "text-9": "Charitable donations",
-      "text-10": "Integrate with mainstream carbon trading platforms",
-      "text-11": "Establish a transnational protection network",
-      "text-12": "More than 100 ecological partners",
-      "text-13": "Continuously developing ecological applications",
+    "architecture": {
+      "title": "Technical Architecture",
+      "text-0": "Smart contract system",
+      "text-1": "Main contract",
+      "text-2": "Handles core token logic",
+      "text-3": "Mining contract",
+      "text-4": "Manages static rewards distribution",
+      "text-5": "Reward contract",
+      "text-6": "Handles dynamic generational rewards",
+      "text-7": "Health Index contract",
+      "text-8": "Real‑time system stability monitoring",
+      "text-9": "Key innovation mechanisms",
+      "text-10": "Health Index tiered regulation",
+      "text-11": "HI >1.5: normal; 0.8≤HI<1.5: release rate –10%; HI<0.8: extra 20% sell tax (all burned)",
+      "text-12": "Auto buy‑back strategy",
+      "text-13": "Daily buy‑back {number0}% of circulating supply, {number1}% burned, {number2}% into holding reward pool"
+    },
+    "highlights": {
+      "title": "Investment Highlights",
+      "text-0": "Smart contract system",
+      "text-1": "Triple income model",
+      "text-2": "Static mining + dynamic rewards + holding dividends",
+      "text-3": "Anti-fragile design",
+      "text-4": "Health Index auto adjustment",
+      "text-5": "Community flywheel",
+      "text-6": "9‑generation referral loop growth",
+      "text-7": "Deflationary mechanism",
+      "text-8": "Dynamic burn + buy‑back burn",
+      "text-9": "Full transparency",
+      "text-10": "Open-sourced contracts, admin renounced",
+      "text-11": "Join now"
+    },
+    "market": {
+      "title": "Market"
+    },
+    "miners": {
+      "title": "My Miners",
+      "text-0": "Earnings Details",
+      "text-1": "Earnings Balance",
+      "text-2": "Redeem"
     },
     "team": {
-      "text-0": "Team and Partners",
-      "text-1": "Founder",
-      "text-2": "Emma Kovac",
-      "text-3": "Ecologist",
-      "text-4": "Consultants",
-      "text-5": "Raj Patel",
-      "text-6": "Blockchain experts, including former WWF officials, carbon trading experts, and Web3 investors",
-      "text-7": "Cooperative partner",
-      "text-8": "African Wildlife Fund, United Nations Environment Programme, Polygon, etc",
+      "title": "My Team",
+      "text-0": "Tier",
+      "text-1": "Referral Link",
+      "text-2": "Referral Code"
+    },
+    "referrals": {
+      "title": "My Shares",
+      "text-0": "Personal Performance",
+      "text-1": "Team Performance"
     }
   },
-  "assetRecord": {
-    "text-0": "Log",
-    "text-1": "View More"
-  },
-  "feeding": {
-    "introduction": {
-      "text-0": "About",
-      "text-1": "Elephant Eco"
+  "deposit": {
+    "computingPower": {
+      "text-0": "My total deposit {text}",
+      "text-1": "Today’s yield {text}",
+      "text-2": "Accumulated yield {text}",
+      "text-3": "Remaining quota {text}",
+      "text-4": "Enter an amount, minimum {number} {text}",
+      "text-5": "Available",
+      "all": "All",
+      "submit": "Get Power"
     },
-    "joint": {
-      "text-0": "Mint Pool",
-      "text-1": "Please enter, each time {text}",
+    "rules": {
+      "text-0": "50% of user deposit (static mining)",
+      "text-1": "Creates LP: 50% BNB to buy REDFOX and remaining 50% BNB to LP, issuing a power certificate. Daily mint based on weighted share of power",
+      "text-2": "30% system rewards split into two parts (dynamic rewards):",
+      "text-3": "10% buys tokens from base pool to leaderboard contract, rewarded by weight (Personal 3%, LP 4%, Team TOP20 3%); remaining 20% splits: 10% BNB for generational rewards, 10% buyback tokens for generational rewards.",
+      "text-4": "Risk reserve buy‑back strategy",
+      "text-5": "1. Daily fixed buy‑back of 0.1% of circulation (accumulated static daily mint)",
+      "text-6": "2. Of the 0.1% buy‑back, 50% burnt, 50% sent to leaderboard contract"
+    },
+    "records": {
+      "title": "Deposit Records",
+      "text-0": "Power purchase",
+      "text-1": "Time"
+    }
+  },
+  "community": {
+    "info": {
+      "text-0": "Upward yield {text}",
+      "text-1": "Downward yield {text}",
+      "text-2": "Referral link",
+      "text-3": "Referral code",
+      "text-4": "{number} generations"
+    },
+    "my": {
+      "title": "My Community",
+      "text-0": "Generational reward available",
+      "text-1": "Personal deposit",
+      "text-2": "Community deposit",
+      "text-3": "Valid"
+    }
+  },
+  "leaderboard": {
+    "tab": {
+      "text-0": "Individual Holdings",
+      "text-1": "LP Leaderboard",
+      "text-2": "Team Holdings"
+    },
+    "text-0": "Today's Personal Leaderboard Pool",
+    "text-1": "Today's LP Reward Pool",
+    "text-2": "Today's Team Reward Pool",
+    "text-3": "Rank",
+    "text-4": "Proportion",
+    "text-5": "Holdings",
+    "text-6": "Address"
+  },
+  "assets": {
+    "health": {
+      "text-0": "Healthy",
+      "text-1": "Warning",
+      "text-2": "Danger",
+      "text-3": "Current index",
+      "text-4": "Health Index = deposit ÷ withdrawal over last {number0} days",
+      "text-5": "Greater than {number0}: Healthy",
+      "text-6": "{number0}–{number1}: Warning (release rate reduced by {number2}%)",
+      "text-7": "Less than {number0}: Danger (auto adjust, extra sell tax {number1}%, all added tax used for buy-back burn)"
+    },
+    "extract": {
+      "title": "Withdraw",
+      "text-0": "Enter amount",
+      "text-1": "All",
       "text-2": "Available",
-      "text-3": "All",
-      "text-4": "Mint"
+      "all": "All",
+      "submit": "Confirm"
     },
-    "feed": {
-      "text-0": "Times",
-      "text-1": "Available",
-      "text-2": "Pay",
-      "text-3": "Donate",
-      "text-4": "Donate Pool",
-      "text-5": "Settled Rewards",
-      "text-6": "My Donations",
-      "text-7": "Claimable Rewards",
-      "text-8": "Claim",
-      "text-9": "Please enter, minimum is {text}",
-      "text-10": "All",
-      "text-11": "Total Donations",
-      "text-12": "Settled",
-      "text-13": "Remaining",
-      "text-14": "Reinvest",
-      "text-15": "Remaining Output",
-      "text-16": "Transaction Fee",
-    },
-    "team": {
-      "text-0": "Current Level",
-      "text-1": "Visitor",
-      "text-2": "Major Performance",
-      "text-3": "Minor Performance",
-      "text-4": "Invitation Address",
-      "text-5": "Direct Referrals",
-      "text-6": "Minor Team",
-      "text-7": "Major Team",
-      "text-8": "Personal",
-      "text-9": "Personal Performance"
+    "features": {
+      "extract": "Withdraw",
+      "sell": "Sell"
     }
   },
-  "bulletin": {
-    "title": "Bulletin Details",
-    "text-0": "Date",
-    "text-1": "Bulletin List"
+  "financialDetail": {
+    "title": "Financial Detail",
+    "text-0": "Currency",
+    "text-1": "Type",
+    "text-2": "Select income type",
+    "text-3": "All types",
+    "text-4": "Reset",
+    "text-5": "Confirm",
+    "text-6": "Currency Type"
   },
+  "subscription": {
+    "title": "Subscribe Miner",
+    "subscribe": {
+      "text-0": "Please select miner type",
+      "text-1": "Purchase quantity",
+      "text-2": "Enter purchase quantity, integers only",
+      "text-3": "Available",
+      "text-4": "Estimated yield",
+      "text-5": "Duration",
+      "text-6": "Days",
+      "text-7": "All",
+      "text-8": "You will pay",
+      "submit": "Buy Now"
+    },
+    "myMiner": {
+      "title": "My Miners",
+      "text-0": "All",
+      "text-1": "Active",
+      "text-2": "Completed",
+      "text-3": "Miner Price",
+      "text-4": "Estimated Yield",
+      "text-5": "Yield Paid",
+      "text-6": "Purchase Time"
+    }
+  },
+
   "transactionType0": "All",
   "transactionType1": "Deposit",
   "transactionType2": "Withdrawal",

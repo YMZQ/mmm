@@ -22,7 +22,7 @@ const actions = ref([
   {icon: getFlagImageUrl('zh'), code: 'zhmsg', text: '中文繁體'},
   {icon: getFlagImageUrl('jp'), code: 'rwmsg', text: '日本語'},          // 日语
   {icon: getFlagImageUrl('ko'), code: 'hwmsg', text: '한국어'},          //韩语
-  // {icon: getFlagImageUrl('vi'), code: 'w1msg', text: 'Tiếng Việt'},        // 越南语
+  {icon: getFlagImageUrl('vi'), code: 'w1msg', text: 'Tiếng Việt'},        // 越南语
   // {icon: getFlagImageUrl('ms'), code: 'w2msg', text: 'Bahasa Malaysia'},   // 马来语
   // {icon: getFlagImageUrl('th'), code: 'twmsg', text: 'ไทย'},            //  泰语
   // {icon: getFlagImageUrl('fr'), code: 'w3msg', text: 'Français'},        // 法语
@@ -70,7 +70,7 @@ onMounted(() => {
   <van-popup v-model:show="visible" round position="top" class="popup-info"
              :overlay-style="{ backgroundColor: 'transparent'}">
     <div class="p-15 flex max-w-[375px] mx-auto">
-      <div class="w-[154px] bg-[rgba(255,255,255,0.20)] mr-10 rounded-[20px] pt-24 px-10 pb-20">
+      <div class="w-[154px] bg-[rgba(255,255,255,0.20)] mr-10 rounded-[20px] pt-24 px-10 pb-20 flex flex-col items-center justify-center">
         <div class="flex items-center justify-center">
           <img class="w-[18px] h-[18px] mr-8" src="@/assets/image/icon/user.svg" alt="">
           <div class="text-12 font-500">{{ uid }}</div>
@@ -88,7 +88,7 @@ onMounted(() => {
           {{ $t('auth.disconnect') }}
         </div>
       </div>
-      <div class="flex-1 border border-solid border-[#ffb59f] pt-10 pl-16 pr-12 rounded-[20px]">
+      <div class="flex-1 border border-solid border-[#ffb59f] pt-10 pl-12 pr-12 rounded-[20px]">
         <img class="w-[24px] h-[24px] mx-auto mb-20" src="@/assets/image/icon/icon-lang.png" alt="">
         <div class="grid grid-cols-2 gap-[10px]">
           <div v-for="item in actions" @click="onSelect(item)"

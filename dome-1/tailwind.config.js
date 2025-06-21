@@ -60,6 +60,7 @@ module.exports = {
         alloyInk: ['LCD2B'],
         cherryBombOne: ['CherryBombOne'],
         titanOne: ['TitanOne-Regular'],
+        AaYuanWeiTuSi: ['AaYuanWeiTuSi'],
         sans: [
           'Roboto',
         ],

@@ -1,5 +1,31 @@
 <script setup>
+import {_getRecords} from "@/service/deposit";
 
+const listViewSearch = ref(null);
+const dataList = ref([]);
+const dataInfo = ref({});
+const pageModel = reactive({
+  pageNo: 1,
+  pageSize: 20,
+  total: 0,
+  pages: 0,
+});
+const getListApi = async (pageModel) => {
+  const result = await _getRecords(pageModel);
+  const sleep = (time) => {
+    return new Promise(resolve => setTimeout(resolve, time))
+  }
+  await sleep(50)
+  return new Promise(resolve => resolve(result))
+}
+
+const resetFun = async () => {
+  pageModel.pageNo = 1
+  pageModel.pageSize = 20
+  pageModel.total = 0
+  pageModel.pages = 0
+  listViewSearch.value.searchFun()
+};
 </script>
 
 <template>
@@ -11,16 +37,20 @@
       </div>
     </div>
     <div class="px-15">
-        <div class="py-20 border-b border-solid border-[rgba(255,255,255,0.05)]">
+      <list-view ref="listViewSearch" :getListApi="getListApi" v-model:pageModel="pageModel" v-model:dataList="dataList"
+                 v-model:dataInfo="dataInfo">
+        <div v-for="item in dataList" :key="item.id"
+             class="py-20 border-b border-solid border-[rgba(255,255,255,0.05)]">
           <div class="text-14 font-500 mb-14 flex items-center justify-between">
             <div>{{ $t('deposit.records.text-0') }}</div>
-            <div class="text-style-1">{{ $filters.fixNumber(100,4) }} BNB</div>
+            <div class="text-style-1">{{ item.stype === 0 ? '-' : '+' }}{{ $filters.fixNumber(item.num, 4) }} {{$filters.upperCase(item.coin) }}</div>
           </div>
           <div class="text-12 flex items-center justify-between">
             <div class="text-[#8C91A2]">{{ $t('deposit.records.text-1') }}</div>
-            <div class="font-500">2025-3-26 09:00:00</div>
+            <div class="font-500">{{item.create_time}}</div>
           </div>
         </div>
+      </list-view>
     </div>
   </div>
 </template>

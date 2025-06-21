@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="px-16 mb-30">
+  <div class="px-16 mb-30 wow animate__animated animate__fadeInLeft pb-40">
     <div class="text-18 text-center font-bold mb-12">{{ $t('home.highlights.title') }}</div>
     <div class="text-style-1 text-14 mb-10">
       {{ $t('home.highlights.text-0') }}
@@ -33,7 +33,6 @@
         </div>
       </div>
     </div>
-    <router-link to="/" class="py-13 rounded-[50px] text-center  text-16 font-bold block bg-[linear-gradient(180deg,#FFB59F_0%,#EA3400_100%)]">{{ $t('home.highlights.text-11') }}</router-link>
   </div>
 </template>
 

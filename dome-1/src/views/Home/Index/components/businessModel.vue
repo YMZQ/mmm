@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="px-16 mb-30">
+  <div class="px-16 mb-30 wow animate__animated animate__fadeInLeft">
     <div class="text-18 text-center font-bold mb-12">{{ $t('home.businessModel.title') }}</div>
     <div class="text-style-1 text-14 mb-10">
       {{ $t('home.businessModel.text-0') }}
@@ -23,7 +23,7 @@
     </div>
     <div class="text-style-1 text-14 mb-10"> {{ $t('home.businessModel.text-4') }}</div>
     <div class="text-12 font-500 mb-10">{{ $t('home.businessModel.text-5') }}</div>
-    <div class="text-center border border-sold border-[rgba(255,255,255,0.30)] rounded-sm mb-12">
+    <div class="text-center border border-sold border-[rgba(255,255,255,0.30)] rounded-sm mb-12 wow animate__animated animate__fadeIn">
       <div
           class="font-bold grid grid-cols-3 py-6 bg-[linear-gradient(180deg,#FB4B18_37.3%,#8F2405_100%)] rounded-[10px_10px_0_0]">
         <div>{{ $t('home.businessModel.text-6') }}</div>
@@ -66,26 +66,26 @@
       </div>
     </div>
     <div class="text-style-1 text-14 mb-10"> {{ $t('home.businessModel.text-10') }}</div>
-    <div class="px-30">
+    <div class="px-30 wow animate__animated animate__fadeIn">
       <div class="px-10 flex items-end text-12 text-center">
         <div class="pt-21 w-[30%] ">
           <div class="px-6 mb-4">{{ $t('home.businessModel.text-11') }}</div>
           <div
-              class="h-[72px] rounded-[5px_0_0_0] bg-[linear-gradient(180deg,#FD4E1C_0.11%,#982301_106.73%)] text-style-2 flex items-center justify-center">
+              class="font-AaYuanWeiTuSi h-[72px] rounded-[5px_0_0_0] bg-[linear-gradient(180deg,#FD4E1C_0.11%,#982301_106.73%)] text-style-2 flex items-center justify-center">
             3%
           </div>
         </div>
         <div class="pt-21 w-[40%] ">
           <div class="px-6 mb-4">{{ $t('home.businessModel.text-12') }}</div>
           <div
-              class="h-[102px] rounded-[5px_5px_0_0] bg-[linear-gradient(180deg,#FFB59F_0%,#EA3400_100%)] text-style-2 flex items-center justify-center">
+              class="font-AaYuanWeiTuSi h-[102px] rounded-[5px_5px_0_0] bg-[linear-gradient(180deg,#FFB59F_0%,#EA3400_100%)] text-style-2 flex items-center justify-center">
             4%
           </div>
         </div>
         <div class="pt-21 w-[30%]">
           <div class="px-6 mb-4">{{ $t('home.businessModel.text-13') }}</div>
           <div
-              class="h-[72px] rounded-[0_5px_0_0] bg-[linear-gradient(180deg,#FD4E1C_0.11%,_#982301_106.73%)] text-style-2 flex items-center justify-center">
+              class="font-AaYuanWeiTuSi h-[72px] rounded-[0_5px_0_0] bg-[linear-gradient(180deg,#FD4E1C_0.11%,_#982301_106.73%)] text-style-2 flex items-center justify-center">
             3%
           </div>
         </div>
@@ -109,7 +109,7 @@
   text-align: justify;
   font-feature-settings: 'liga' off, 'clig' off;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-  font-family: 'AaYuanWeiTuSi';
+  font-family: 'Anton';
   font-size: 20px;
   font-style: normal;
   font-weight: 400;

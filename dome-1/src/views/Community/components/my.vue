@@ -1,5 +1,14 @@
 <script setup>
+const props = defineProps({
+  directList: {
+    type: Array,
+    default: () => []
+  }
+})
 
+const getImageUrl = (name) => {
+  return new URL(`/src/assets/image/empty-img/${name}.png`, import.meta.url).href;
+}
 </script>
 
 <template>
@@ -11,7 +20,7 @@
       </div>
     </div>
     <div class="px-15">
-      <div v-for="item in 1000" class="py-20 border-b border-solid border-[rgba(255,255,255,0.05)]">
+      <div  v-for="item in directList" class="py-20 border-b border-solid border-[rgba(255,255,255,0.05)]">
         <div class="text-14 font-500 mb-16 flex items-center justify-between">
           <div class="flex items-center">
             <div>UID:5648</div>
@@ -25,14 +34,17 @@
         </div>
         <div class="text-12 text-center flex items-center justify-between">
           <div>
-            <div class="font-600 mb-4">{{ $filters.fixNumber(100,4) }} BNB</div>
+            <div class="font-600 mb-4">{{$filters.fixNumber(item.thisAmount,4)}} BNB</div>
             <div class="text-[#8C91A2]">{{ $t('community.my.text-1') }}</div>
           </div>
           <div>
-            <div class="font-600 mb-4">{{ $filters.fixNumber(100) }} BNB</div>
+            <div class="font-600 mb-4">{{$filters.fixNumber(item.thisAmount,4)}} BNB</div>
             <div class="text-[#8C91A2]">{{ $t('community.my.text-2') }}</div>
           </div>
         </div>
+      </div>
+      <div v-if="directList.length===0">
+        <van-empty :image="getImageUrl('img-1')" :description="$t('common.noData')"/>
       </div>
     </div>
   </div>

@@ -23,8 +23,27 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: "Anton";
+    src: url('@/assets/font/Anton-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PingFangSC-Regular";
+    src: url('@/assets/font/PingFangSC-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "PingFangSC-Semibold";
+    src: url('@/assets/font/PingFangSC-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
-    --van-base-font: "Sarala";
+    --van-base-font: "PingFangSC-Regular";
     min-height: 100vh;
     color: #fff;
     background: #131213;

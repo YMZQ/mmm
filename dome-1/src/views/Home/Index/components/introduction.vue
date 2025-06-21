@@ -4,7 +4,7 @@
 
 <template>
   <div class="pt-25 px-16 pb-[101px] flex items-end w-full h-[667px]  bg-[url(@/assets/image/home/image-bg-0-0.png)] bg-cover bg-no-repeat bg-center">
-    <div class="text-center py-18 px-10 bg-[rgba(255,255,255,0.05)] rounded-sm backdrop-blur-[30px]">
+    <div class="text-center py-18 px-10 bg-[rgba(255,255,255,0.05)] rounded-sm backdrop-blur-[30px] wow animate__animated animate__fadeIn">
       <div class="text-18 font-bold mb-12">{{$t('home.introduction.title')}}</div>
       <div class="text-14">{{$t('home.introduction.text-0')}}</div>
     </div>

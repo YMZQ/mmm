@@ -22,7 +22,7 @@ const routes = [
     name: 'app',
     component: App,
     meta: {
-      requireAuth: false
+      requireAuth: true
     },
     children: [
       {
@@ -30,7 +30,7 @@ const routes = [
         name: 'deposit',
         component: () => import('@/views/Deposit/Index.vue'),
         meta: {
-          requireAuth: false
+          requireAuth: true
         }
       },
       {
@@ -38,7 +38,7 @@ const routes = [
         name: 'leaderboard',
         component: () => import('@/views/Leaderboard/Index.vue'),
         meta: {
-          requireAuth: false
+          requireAuth: true
         }
       },
       {
@@ -46,7 +46,7 @@ const routes = [
         name: 'community',
         component: () => import('@/views/Community/Index.vue'),
         meta: {
-          requireAuth: false
+          requireAuth: true
         }
       },
       {
@@ -54,33 +54,23 @@ const routes = [
         name: 'assets',
         component: () => import('@/views/assets/Index.vue'),
         meta: {
-          requireAuth: false
+          requireAuth: true
         }
       }
     ]
   },
-
-
   {
     path: '/financialDetail',
     name: 'financialDetail',
     component: () => import('@/views/Assets/FinancialDetail/Index.vue'),
     meta: {
-      requireAuth: false
+      requireAuth: true
     }
   },
-  {
-    path: '/earnings',
-    name: 'earnings',
-    component: () => import('@/views/earnings/Index.vue'),
-    meta: {
-      requireAuth: false
-    }
-  },
-
   {
     path: "/:pathMatch(.*)*", redirect: {name: "home"}
-  },]
+  }
+]
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -103,20 +93,19 @@ router.beforeEach(async (to, from, next) => {
   if (user.username) {
     try {
       const account = await web3Utils.getAccounts();
-      // if (user.username.toLowerCase() !== account?.toLowerCase()) {
-      //   appStore().address = '';
-      //   appStore().token = '';
-      //   appStore().user = [];
-      //   appStore().info = [];
-      //   if (to.fullPath.includes('code')) {
-      //     redirectToHome({code: to.query.code});
-      //   } else {
-      //     redirectToHome();
-      //   }
-      // } else {
-      //   next();
-      // }
-      next();
+      if (user.username.toLowerCase() !== account?.toLowerCase()) {
+        appStore().address = '';
+        appStore().token = '';
+        appStore().user = [];
+        appStore().info = [];
+        if (to.fullPath.includes('code')) {
+          redirectToHome({code: to.query.code});
+        } else {
+          redirectToHome();
+        }
+      } else {
+        next();
+      }
     } catch (errors) {
       showFailToast(errors);
     }
@@ -124,7 +113,7 @@ router.beforeEach(async (to, from, next) => {
     if (!requireAuth) {
       next();
     } else {
-      showFailToast(i18n.global.t('请先连接钱包'));
+      showFailToast(i18n.global.t('auth.connectWalletPrompt'));
       if (to.fullPath.includes('code')) {
         redirectToHome({code: to.query.code});
       } else {

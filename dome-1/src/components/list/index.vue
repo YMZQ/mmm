@@ -1,13 +1,13 @@
 <template>
-	<van-pull-refresh v-model="isRefresh" @refresh="refreshClick" :loading-text="$t('加载中...')"
-		:success-text="$t('数据刷新成功')">
-		<van-list v-model:loading="isListLoading" :loading-text="$t('加载中...')" :finished="isFinished" :offset="state.offset"
+	<van-pull-refresh v-model="isRefresh" @refresh="refreshClick" :loading-text="$t('common.loading')"
+		:success-text="$t('common.refreshSuccess')">
+		<van-list v-model:loading="isListLoading" :loading-text="$t('common.loading')" :finished="isFinished" :offset="state.offset"
 			finished-text="" :immediate-check="false" @load="onLoad">
 			<slot></slot>
 		</van-list>
 	</van-pull-refresh>
 	<div v-if="state.nodata === true">
-		<van-empty :image="getImageUrl('img')" :description="$t('暂无数据')" />
+		<van-empty :image="getImageUrl('img')" :description="$t('common.noData')" />
 	</div>
 </template>
 <script setup>

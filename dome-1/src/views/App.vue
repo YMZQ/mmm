@@ -22,6 +22,4 @@ import TabBar from '@/components/TabBar/index.vue'
 .router-fade-leave-active {
   opacity: 1;
 }
-
-
 </style>

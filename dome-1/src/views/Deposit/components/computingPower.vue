@@ -1,11 +1,15 @@
 <script setup>
+import {fixNumber} from "@/utils";
+import {_sendDeposit, _sendDepositCallback} from "@/service/deposit";
+import Web3 from "@/utils/web3js/bnbWeb3";
 
+
+const emit = defineEmits(['callback'])
 const props = defineProps({
   balances: {
     type: Object,
     default: () => ({
-      bnbBalance: null,
-      usdtBalance: null,
+      bnbBalance: null
     })
   }
 })
@@ -13,8 +17,41 @@ const number = ref('')
 const currentWalletBalance = computed(() => {
   return props.balances.bnbBalance ?? null
 })
-const onSubmit = async () => {
 
+const doAll = () => number.value = fixNumber(currentWalletBalance.value, 4);
+
+
+const sendDepositCallback = async (hash) => {
+  let result = await _sendDepositCallback({
+    hash: hash
+  });
+  emit('callback')
+  proxy.$toast.success(t('common.submitSuccess'));
+}
+
+const _Web3AddLpBreeding = async (val) => {
+  const param = {
+    payAmount: val.payAmount,
+    addLpRatio: val.addLpRatio,
+    payCoinAddress: val.payCoinAddress,
+    eacAddress: val.eacAddress,
+    deadline: val.deadline,
+    sign: val.sign,
+  }
+  const result = await Web3.sendAddLpBreeding(param);
+  if (result.status) {
+    await sendDepositCallback(result.hash)
+  } else {
+    proxy.$toast.error(result.message)
+  }
+};
+
+const onSubmit = async () => {
+  let result = await _sendDeposit({
+    num: number.value
+  });
+  proxy.$toast.loading(t('common.contractRequesting'));
+  await _Web3AddLpBreeding(result)
 };
 </script>
 
@@ -26,19 +63,19 @@ const onSubmit = async () => {
         <div class="absolute w-[16px] h-[16px] top-11 right-11"></div>
         <div class="w-full grid grid-cols-2 gap-x-[10px] gap-y-[20px] text-center">
           <div>
-            <div class="text-20 font-600">{{ $filters.fixNumber(6545, 5) }}</div>
+            <div class="text-20 font-600">{{ $filters.fixNumber(6545, 4) }}</div>
             <div class="text-12 text-[#CED0D8]">{{ $t('deposit.computingPower.text-0', {text: 'BNB'}) }}</div>
           </div>
           <div>
-            <div class="text-20 font-600">{{ $filters.fixNumber(6545, 5) }}</div>
+            <div class="text-20 font-600">{{ $filters.fixNumber(6545, 4) }}</div>
             <div class="text-12 text-[#CED0D8]">{{ $t('deposit.computingPower.text-1', {text: 'BNB'}) }}</div>
           </div>
           <div>
-            <div class="text-20 font-600">{{ $filters.fixNumber(6545, 5) }}</div>
+            <div class="text-20 font-600">{{ $filters.fixNumber(6545, 4) }}</div>
             <div class="text-12 text-[#CED0D8]">{{ $t('deposit.computingPower.text-2', {text: 'BNB'}) }}</div>
           </div>
           <div>
-            <div class="text-20 font-600">{{ $filters.fixNumber(6545, 5) }}</div>
+            <div class="text-20 font-600">{{ $filters.fixNumber(6545, 4) }}</div>
             <div class="text-12 text-[#CED0D8]">{{ $t('deposit.computingPower.text-3', {text: 'BNB'}) }}</div>
           </div>
         </div>
@@ -49,14 +86,15 @@ const onSubmit = async () => {
                      v-model="number" type="number"
                      :placeholder="$t('deposit.computingPower.text-4',{number:1,text:'BNB'})">
             <template #button>
-              <div>{{ $t('deposit.computingPower.all') }}</div>
+              <div @click="doAll">{{ $t('deposit.computingPower.all') }}</div>
             </template>
           </van-field>
-          <div class="mb-24 mt-10 flex">
-              <span>{{ $t('subscription.subscribe.text-3') }}:</span>
-              <span v-if="currentWalletBalance === null"> <van-loading size="18" color="#ec4110"/> </span>
-              <span v-else>{{ $filters.fixNumber(currentWalletBalance, 2) }}</span>
-              <span>BNB</span>
+          <div class="mb-24 mt-10 flex text-14">
+            <span class="mr-4 text-style-1">{{ $t('subscription.subscribe.text-3') }}:</span>
+            <span v-if="currentWalletBalance === null" class="flex items-center"> <van-loading size="18"
+                                                                                               color="#ec4110"/> <span
+                class="text-style-1">BNB</span></span>
+            <span v-else class="text-style-1">{{ $filters.fixNumber(currentWalletBalance, 4) }} BNB</span>
           </div>
           <van-button class="w-full  text-16 text-[#1C3B5E] font-600 relative">
             {{ $t('deposit.computingPower.submit') }}

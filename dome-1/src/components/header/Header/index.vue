@@ -10,7 +10,7 @@
       <div class="connect-main flex items-center">
         <img class="w-[24px] h-[24px]" @click="userPanel=!userPanel" src="@/assets/image/icon/icon-lang.png" alt="">
         <div class="connect-content flex items-center justify-center">
-          <div class="flex items-center z-[2]" v-if="!username" @click="web3Log">{{ $t('连接钱包') }}</div>
+          <div class="flex items-center z-[2]" v-if="!username" @click="web3Log">{{ $t('common.walletConnect') }}</div>
           <div class="flex items-center z-[2]" v-else @click="userPanel=!userPanel">
             {{ $filters.prefix(username, 3, 3) }}
             <img src="@/assets/image/icon/loginOut.png" alt="">
@@ -32,7 +32,7 @@
 import PopupUserPanel from '@/components/popup/popup-userPanel.vue'
 const PopupRegister = defineAsyncComponent(() => import('@/components/popup/popup-register.vue'))
 
-import {useRoute, useRouter} from 'vue-router'
+
 import {storeToRefs} from 'pinia';
 import {appStore} from '@/stores/index'
 import {login, _register, _loginOut} from '@/service/user'
@@ -81,10 +81,10 @@ const web3Log = async () => {
     info: [],
   });
   btnStatus.value = true
-  proxy.$toast.loading(t('合约请求中'));
+  proxy.$toast.loading(t('common.contractRequesting'));
   Web3.getAccountAndSignMessage().then(async ({account, signature}) => {
     store.changeAddress(account);
-    proxy.$toast.loading(t('登录中'));
+    proxy.$toast.loading(t('common.loggingIn'));
     let results;
     results = await login({
       message: message.value,

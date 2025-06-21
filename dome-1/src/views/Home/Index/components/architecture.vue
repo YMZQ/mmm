@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="px-16 mb-30">
+  <div class="px-16 mb-30 wow animate__animated animate__fadeInRight">
     <div class="text-18 text-center font-bold mb-12">{{ $t('home.architecture.title') }}</div>
     <div class="text-style-1 text-14 mb-10">
       {{ $t('home.architecture.text-0') }}

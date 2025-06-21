@@ -16,7 +16,7 @@ const active = ref(0);
     <Header ref="header"></Header>
     <img src="@/assets/image/leaderboard/image-0.png" alt="">
     <div class="rounded-[20px_20px_0_0] -mt-47 bg-[#141115]">
-      <div class="flex items-center justify-center  text-[#8C91A2] text-14">
+      <div class="flex items-center justify-center text-[#8C91A2] text-14">
         <div v-for="(item,index) in tabBar" class="py-10" :class="{'mx-20 ':index===1,'active':active===item.id}"
              @click="active=item.id">{{ $t(item.text) }}
         </div>

@@ -3,7 +3,8 @@
 </script>
 
 <template>
-  <div class="px-16 mb-30">
+  <div class="px-16 mb-30 wow animate__animated animate__fadeInRight">
+
     <div class="text-18 text-center font-bold mb-12">{{ $t('home.tokenomics.title') }}</div>
     <div
         class="flex items-center justify-center w-full h-[166px] rounded-sm bg-[url(@/assets/image/home/image-bg-0-2.png)] bg-cover bg-no-repeat bg-center mb-12">

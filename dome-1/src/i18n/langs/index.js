@@ -3,7 +3,7 @@ import en from './en'  //英文
 import zh from './zh'  //中文简体
 import rwmsg from './jp'  //日语
 import hwmsg from './ko'  //韩语
-// import w1msg from './vi'  //越南语
+import w1msg from './vi'  //越南语
 // import w2msg from './ms'  //马来语
 // import twmsg from './th'  //泰语
 // import w3msg from './fr'  //法语
@@ -16,7 +16,7 @@ export default {
     cnmsg: en, //英文
     rwmsg,
     hwmsg,
-    // w1msg,
+    w1msg,
     // w2msg,
     // twmsg,
     // w3msg,
