@@ -3,7 +3,6 @@ import {_getRecords} from '@/service/assets'
 import SelectionPopup from './components/SelectionPopup.vue'
 
 const typeList = ref([
-  {id: 0, text: 'transactionType1', value: 1},
   {id: 1, text: 'transactionType2', value: 2},
   {id: 2, text: 'transactionType3', value: 3},
   {id: 3, text: 'transactionType4', value: 4},

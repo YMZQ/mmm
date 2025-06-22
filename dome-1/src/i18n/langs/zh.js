@@ -306,13 +306,20 @@ const zh = {
 
 
   "transactionType0": "全部",
-  "transactionType1": "算力挖矿",
-  "transactionType2": "复投",
-  "transactionType3": "个人持币奖励",
-  "transactionType4": "LP排行奖励",
-  "transactionType5": "团队持币奖励",
-  "transactionType6": "代数奖",
-  "transactionType7": "收益领取",
+  "transactionType1": "",
+  "transactionType2": "出金",
+  "transactionType3": "LP分红",
+  "transactionType4": "持币榜分红",
+  "transactionType5": "LP榜分红",
+  "transactionType6": "团队持币榜分红",
+  "transactionType7": "代数奖",
   "transactionType8": "",
+  "transactionType9": "资产调整",
+
+
+
+
+
+
 }
 export default zh;

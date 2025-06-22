@@ -6,19 +6,35 @@ import WithdrawModal from './components/withdrawModal.vue'
 import {_getAssets} from "../../service/assets";
 
 const showWithdrawModal = ref(false)
+const rfxBalance = ref(0)
+const bnbBalance = ref(0)
 
-
-const assetList = ref([])
-const healthScore= ref(null)
+const list = ref([])
+const healthScore = ref(null)
 
 const init = async () => {
   const response = await _getAssets();
-  console.log(response.walletList)
-  assetList.value = response.walletList
+  bnbBalance.value = response.bnbBalance
+  rfxBalance.value = response.rfxBalance
+  list.value[0] = {
+    id: 0,
+    coin: 'rfx',
+    balance: response.rfxBalance
+  }
+  list.value[1] = {
+    id: 1,
+    coin: 'bnb',
+    balance: response.bnbBalance
+  }
+  // console.log(list.value)
+
   healthScore.value = response.healthScore
+  showWithdrawModal.value = false
 }
 
-onMounted(init);
+onMounted(async () => {
+  await init();
+});
 </script>
 
 <template>
@@ -33,9 +49,9 @@ onMounted(init);
       <Features @click-extract="showWithdrawModal = true"/>
     </section>
     <section id="records">
-      <Records :assetList="assetList"/>
+      <Records :bnbBalance="bnbBalance" :rfxBalance="rfxBalance"/>
     </section>
-    <WithdrawModal v-model:show="showWithdrawModal" @callback="init" :assetList="assetList"/>
+    <WithdrawModal v-model:show="showWithdrawModal" @callback="init" :assetList="list"/>
   </div>
 </template>
 <style scoped lang="less">

@@ -9,7 +9,7 @@ import {_getDeposit} from "@/service/deposit";
 
 const store = appStore();
 const {user, address, globalConfig} = storeToRefs(store);
-
+const recordRef= ref(null)
 const balances = ref({
   bnbBalance: null
 })
@@ -53,7 +53,9 @@ const fetchData = async () => {
 const init = async () => {
   await fetchData();
 };
-
+const handleReset = () => {
+  recordRef.value.resetFun()
+}
 
 onMounted(() => {
   init();
@@ -64,13 +66,13 @@ onMounted(() => {
   <div class="">
     <Header ref="header"></Header>
     <section id="computingPower">
-      <ComputingPower :balances="balances" :depositInfo="depositInfo"/>
+      <ComputingPower :balances="balances" :depositInfo="depositInfo" @callback="handleReset"/>
     </section>
     <section id="rules">
       <Rules/>
     </section>
     <section id="records">
-      <Records/>
+      <Records ref="recordRef"/>
     </section>
   </div>
 </template>

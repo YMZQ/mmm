@@ -26,6 +26,7 @@ const resetFun = async () => {
   pageModel.pages = 0
   listViewSearch.value.searchFun()
 };
+defineExpose({ resetFun })
 </script>
 
 <template>

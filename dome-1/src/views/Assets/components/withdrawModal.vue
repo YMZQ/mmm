@@ -19,13 +19,17 @@ const props = defineProps({
     default: () => []
   }
 })
-
 const currencyInfo = ref({})
-watch(() => props.assetList, (newList) => {
-  if (newList.length > 0) {
-    currencyInfo.value = newList[0]
-  }
-}, {immediate: true})
+watch(
+    () => props.assetList,
+    (newList) => {
+      if (newList.length > 0 && Object.keys(currencyInfo.value).length === 0) {
+        currencyInfo.value = newList[0]
+      }
+    },
+    { immediate: true, deep: true }
+)
+
 
 
 const show = ref(false);
@@ -44,14 +48,16 @@ const sendOutAssetsCallback = async (hash) => {
   let result = await _sendOutAssetsCallback({
     hash: hash
   });
-  emit('callback')
   proxy.$toast.success(t('public.success.message'));
+  emit('callback')
+  show.value=false
 }
 const _Web3OutAssets = async (val) => {
   const param = {
     amount: val.amount,
-    nonce: val.nonce,
     fee: val.fee,
+    isTrigger: val.isTrigger,
+    nonce: val.nonce,
     orderNumber: val.orderNumber,
     coinAddress: val.coinAddress,
     deadline: val.deadline,
@@ -64,12 +70,13 @@ const _Web3OutAssets = async (val) => {
     proxy.$toast.error(result.message)
   }
 };
+const doAll = () => number.value = fixNumber(currencyInfo.value.balance, currencyInfo.value.coin==='bnb'?4:2);
 
-const onSubmit = async (coin, num) => {
-  if (Number(num) <= 0) {
-    return proxy.$toast.error(t('popup.insufficientBalance', {text: coin}));
+const onSubmit = async () => {
+  if (Number(number.value) <= 0 || Number(number.value)>currencyInfo.value.balance) {
+    return proxy.$toast.error(t('popup.insufficientBalance', {text: currencyInfo.value.coin}));
   }
-  let result = await _sendOutAssets({coin: coin, num: fixNumber(num)});
+  let result = await _sendOutAssets({coin: currencyInfo.value.coin, num: number.value});
   proxy.$toast.loading(t('common.contractRequesting'));
   await _Web3OutAssets(result)
 };
@@ -90,19 +97,20 @@ const onSubmit = async (coin, num) => {
             :class="currencyInfo.id === item.id ? 'bg-[#f57753]' : 'bg-[#2d2d2d]'"
             @click="setCurrencyInfo(item)"
         >
-          {{ item.text }}
+          {{ $filters.upperCase(item.coin) }}
         </div>
       </div>
       <van-form @submit="onSubmit">
-        <van-field class="mb-5" :border="false" v-model="number" type="number" :placeholder="$t('assets.extract.text-0')">
+        <van-field class="mb-5" :border="false" v-model="number" type="number"
+                   :placeholder="$t('assets.extract.text-0')">
           <template #button>
-            <div>{{ $t('assets.extract.all') }}</div>
+            <div @click="doAll">{{ $t('assets.extract.all') }}</div>
           </template>
         </van-field>
         <div class="mb-24 mt-10 flex">
-          <span class="text-style-1">{{ $t('assets.extract.text-2') }}:{{ $filters.fixNumber(100) }}</span>
+          <span class="text-style-1">{{ $t('assets.extract.text-2') }}:{{ $filters.fixNumber(currencyInfo.balance,currencyInfo.coin==='bnb'?4:2) }}</span>
         </div>
-        <van-button class="w-full  text-16 text-[#1C3B5E] font-600 relative"  native-type="submit">
+        <van-button class="w-full  text-16 text-[#1C3B5E] font-600 relative" native-type="submit">
           {{ $t('assets.extract.submit') }}
         </van-button>
       </van-form>

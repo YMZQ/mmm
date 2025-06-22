@@ -1,8 +1,7 @@
 <script setup>
 const props = defineProps({
   healthScore: {
-    type: Number,
-    default: 1
+    type: [Number,String]
   }
 })
 </script>

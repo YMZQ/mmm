@@ -2,7 +2,9 @@
 import {fixNumber} from "@/utils";
 import {_sendDeposit, _sendDepositCallback} from "@/service/deposit";
 import Web3 from "@/utils/web3js/bnbWeb3";
-
+import {useI18n} from "vue-i18n";
+const {proxy} = getCurrentInstance();
+const {t} = useI18n();
 
 const emit = defineEmits(['callback'])
 const props = defineProps({
@@ -56,6 +58,13 @@ const _Web3InAmount = async (val) => {
 };
 
 const onSubmit = async () => {
+  sendDepositCallback('0x09505220d1835602394d02bfbf377d23e2babc8ad3d89c74953d4c381662e1e6')
+  if (Number(number.value) <Number(props.depositInfo.minInAmount)) {
+    return proxy.$toast.error(t(t('deposit.computingPower.text-4',{number:props.depositInfo.minInAmount,text:'BNB'})));
+  }
+  if (Number(number.value) > Number(currentWalletBalance.value)) {
+    return proxy.$toast.error(t('popup.insufficientBalance', {text: 'BNB'}));
+  }
   let result = await _sendDeposit({
     num: number.value
   });
