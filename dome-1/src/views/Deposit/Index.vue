@@ -22,17 +22,13 @@ const depositInfo = ref({
 });
 
 async function getBalances(address) {
-  console.log('123123')
-  console.log(address)
-  const nativePromise =await Web3.getBalance(address)
-  console.log(nativePromise)
-  // const [bnbBalance] = await Promise.all([
-  //   nativePromise
-  // ])
-  // console.log(123123)
-  // console.log(bnbBalance)
-  // console.log(567)
-  // return {bnbBalance}
+
+  const nativePromise = Web3.getBalance(address)
+  const [bnbBalance] = await Promise.all([
+    nativePromise
+  ])
+  console.log(bnbBalance)
+  return {bnbBalance}
 }
 
 const fetchData = async () => {
@@ -46,8 +42,7 @@ const fetchData = async () => {
       minInAmount: response.minInAmount,
     })
     if (user.value.username) {
-      let bnbBalances = await getBalances(user.value.username)
-      balances.value.bnbBalances = bnbBalances
+      balances.value = await getBalances(user.value.username)
     }
   } catch (error) {
     console.error("common.dataFetchFail", error);

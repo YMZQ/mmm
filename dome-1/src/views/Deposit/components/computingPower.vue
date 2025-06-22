@@ -108,7 +108,7 @@ const onSubmit = async () => {
             </span>
             <span v-else class="text-style-1">{{ $filters.fixNumber(currentWalletBalance, 4) }} BNB</span>
           </div>
-          <van-button class="w-full  text-16 text-[#1C3B5E] font-600 relative">
+          <van-button class="w-full  text-16 text-[#1C3B5E] font-600 relative"  native-type="submit">
             {{ $t('deposit.computingPower.submit') }}
           </van-button>
         </van-form>

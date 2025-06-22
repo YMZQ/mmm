@@ -102,7 +102,7 @@ const onSubmit = async (coin, num) => {
         <div class="mb-24 mt-10 flex">
           <span class="text-style-1">{{ $t('assets.extract.text-2') }}:{{ $filters.fixNumber(100) }}</span>
         </div>
-        <van-button class="w-full  text-16 text-[#1C3B5E] font-600 relative">
+        <van-button class="w-full  text-16 text-[#1C3B5E] font-600 relative"  native-type="submit">
           {{ $t('assets.extract.submit') }}
         </van-button>
       </van-form>
