@@ -113,7 +113,7 @@ const zh = {
       "text-7": "買入",
       "text-8": "{number-0}%，{number-1}%添加流動性池;",
       "text-9": "賣出",
-      "text-10": "{number-0}%，其中{number-1}%排行榜獎勵，{number-2}%風險儲備金，{number-3}%項目運營，{number-4}%回流底池",
+      "text-10": "{number-0}%，{number-1}%專案經營，{number-2}%回流底池",
       "text-11": "流動性池管理",
       "text-12": "初始流動性:{number-0}% {text-0} +{number-1}% {text-1},自動做市商(AMM) ,算法每日動態銷毀機制"
     },
@@ -261,6 +261,9 @@ const zh = {
       "text-2": "可用",
       "all": "全部",
       "submit": "確定"
+    },
+    "records": {
+      "text-0": "凍結"
     },
     "features": {
       "extract": "提取",

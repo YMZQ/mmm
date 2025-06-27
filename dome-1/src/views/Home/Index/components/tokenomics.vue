@@ -47,11 +47,9 @@
           <span class="font-bold mr-2">{{ $t('home.tokenomics.text-9') }}:</span>
           <span> {{
               $t('home.tokenomics.text-10', {
-                'number-0': 10,
+                'number-0': 5,
                 'number-1': 3,
-                'number-2': 2,
-                'number-3': 3,
-                'number-4': 2
+                'number-2': 2
               })
             }}</span>
         </div>

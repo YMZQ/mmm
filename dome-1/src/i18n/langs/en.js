@@ -110,7 +110,7 @@ const en = {
       "text-7": "Buy",
       "text-8": "{number0}% to liquidity pool; {number1}% to liquidity provision",
       "text-9": "Sell",
-      "text-10": "{number0}%, of which {number1}% leaderboard rewards, {number2}% risk reserve, {number3}% project operation, {number4}% returns to base pool",
+      "text-10": "{number-0}%, {number-1}% for project operations, {number-2}% returned to the liquidity pool",
       "text-11": "Liquidity Pool Management",
       "text-12": "Initial liquidity: {number0}% {text0} + {number1}% {text1}, AMM, auto daily burn mechanism"
     },
@@ -259,6 +259,9 @@ const en = {
       "all": "All",
       "submit": "Confirm"
     },
+    "records": {
+      "text-0": "Frozen"
+    },
     "features": {
       "extract": "Withdraw",
       "sell": "Sell"
@@ -301,20 +304,14 @@ const en = {
   },
 
   "transactionType0": "All",
-  "transactionType1": "Deposit",
+  "transactionType1": "",
   "transactionType2": "Withdrawal",
-  "transactionType3": "Static Income",
-  "transactionType4": "Referral Reward",
-  "transactionType5": "Node Reward",
-  "transactionType6": "Donation",
-  "transactionType7": "LP Dividend",
-  "transactionType8": "Event Reward",
-  "transactionType9": "",
-  "transactionType10": "",
-  "transactionType11": "",
-  "transactionType12": "",
-  "transactionType13": "",
-  "transactionType14": "",
-  "transactionType15": "",
+  "transactionType3": "LP Dividend",
+  "transactionType4": "Holding Leaderboard Dividend",
+  "transactionType5": "LP Leaderboard Dividend",
+  "transactionType6": "Team Holding Leaderboard Dividend",
+  "transactionType7": "Generation Bonus",
+  "transactionType8": "",
+  "transactionType9": "Asset Adjustment"
 }
 export default en;

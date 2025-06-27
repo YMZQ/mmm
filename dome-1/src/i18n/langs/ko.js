@@ -110,7 +110,7 @@ const hwmsg = {
       "text-7": "구매",
       "text-8": "{number-0}%, {number-1}% 유동성 풀에 추가;",
       "text-9": "판매",
-      "text-10": "{number-0}%, 그중 {number-1}% 랭킹 보상, {number-2}% 위험 준비금, {number-3}% 프로젝트 운영, {number-4}% 환류 풀",
+      "text-10": "{number-0}%, {number-1}%는 프로젝트 운영에 사용되며, {number-2}%는 유동성 풀로 환원됩니다",
       "text-11": "유동성 풀 관리",
       "text-12": "초기 유동성: {number-0}% {text-0} + {number-1}% {text-1}, 자동 마켓 메이커(AMM), 알고리즘 일일 동적 소각 메커니즘"
     },
@@ -259,6 +259,9 @@ const hwmsg = {
       "all": "전체",
       "submit": "확인"
     },
+    "records": {
+      "text-0": "동결"
+    },
     "features": {
       "extract": "출금",
       "sell": "판매"
@@ -301,13 +304,14 @@ const hwmsg = {
   },
 
   "transactionType0": "전체",
-  "transactionType1": "충전",
+  "transactionType1": "",
   "transactionType2": "출금",
-  "transactionType3": "정적 수익",
-  "transactionType4": "추천 보상",
-  "transactionType5": "노드 보상",
-  "transactionType6": "기부",
-  "transactionType7": "LP 배당",
-  "transactionType8": "이벤트 보상",
+  "transactionType3": "LP 배당",
+  "transactionType4": "보유 랭킹 배당",
+  "transactionType5": "LP 랭킹 배당",
+  "transactionType6": "팀 보유 랭킹 배당",
+  "transactionType7": "세대 보너스",
+  "transactionType8": "",
+  "transactionType9": "자산 조정"
 }
 export default hwmsg;

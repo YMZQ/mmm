@@ -27,7 +27,6 @@ async function getBalances(address) {
   const [bnbBalance] = await Promise.all([
     nativePromise
   ])
-  console.log(bnbBalance)
   return {bnbBalance}
 }
 

@@ -110,7 +110,7 @@ const rwmsg = {
       "text-7": "購入",
       "text-8": "{number0}%を流動性プールに追加；{number1}%を流動性提供",
       "text-9": "売却",
-      "text-10": "{number0}％、内訳：{number1}％ランキング報酬、{number2}％リスク準備金、{number3}％プロジェクト運営、{number4}％ベースプール還元",
+      "text-10": "{number-0}%、{number-1}%はプロジェクト運営に使用、{number-2}%は流動性プールに還元",
       "text-11": "流動性プール管理",
       "text-12": "初期流動性：{number0}% {text0}+{number1}% {text1}、AMM、自動日次バーンメカニズム"
     },
@@ -259,6 +259,9 @@ const rwmsg = {
       "all": "全額",
       "submit": "確定"
     },
+    "records": {
+      "text-0": "凍結"
+    },
     "features": {
       "extract": "引き出し",
       "sell": "売却"
@@ -300,20 +303,14 @@ const rwmsg = {
     }
   },
   "transactionType0": "すべて",
-  "transactionType1": "入金",
+  "transactionType1": "",
   "transactionType2": "出金",
-  "transactionType3": "固定収益",
-  "transactionType4": "紹介報酬",
-  "transactionType5": "ノード報酬",
-  "transactionType6": "寄付",
-  "transactionType7": "エルピーはいとう",
-  "transactionType8": "イベント報酬",
-  "transactionType9": "",
-  "transactionType10": "",
-  "transactionType11": "",
-  "transactionType12": "",
-  "transactionType13": "",
-  "transactionType14": "",
-  "transactionType15": "",
+  "transactionType3": "LP配当",
+  "transactionType4": "保有ランキング配当",
+  "transactionType5": "LPランキング配当",
+  "transactionType6": "チーム保有ランキング配当",
+  "transactionType7": "世代ボーナス",
+  "transactionType8": "",
+  "transactionType9": "資産調整"
 }
 export default rwmsg;

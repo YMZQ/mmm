@@ -5,7 +5,11 @@ import SelectionPopup from './components/SelectionPopup.vue'
 const typeList = ref([
   {id: 1, text: 'transactionType2', value: 2},
   {id: 2, text: 'transactionType3', value: 3},
-  {id: 3, text: 'transactionType4', value: 4},
+  {id: 4, text: 'transactionType4', value: 4},
+  {id: 5, text: 'transactionType5', value: 5},
+  {id: 6, text: 'transactionType6', value: 6},
+  {id: 7, text: 'transactionType7', value: 7},
+  // {id: 9, text: 'transactionType9', value: 9},
 ])
 
 const currencyList = ref([

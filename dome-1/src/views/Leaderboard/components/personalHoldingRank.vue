@@ -46,7 +46,7 @@ onMounted(getListApi);
           <img class="w-[24px]" v-if="index===0" src="@/assets/image/leaderboard/image-2.png" alt="">
           <img class="w-[24px]" v-else-if="index===1" src="@/assets/image/leaderboard/image-3.png" alt="">
           <img class="w-[24px]" v-else-if="index===2" src="@/assets/image/leaderboard/image-4.png" alt="">
-          <span v-else class="w-[24px] inline-block text-center font-600">{{ index }}</span>
+          <span v-else class="w-[24px] inline-block text-center font-600">{{ Number(index+1) }}</span>
         </div>
         <!--          <div class="text-center">12.22%</div>-->
         <div class="col-span-2 text-center">{{ $filters.fixNumber(item.num) }}</div>

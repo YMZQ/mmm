@@ -49,7 +49,7 @@ export default defineConfig({
         port: 8080,
         proxy: {
             '/adc': {
-                target: 'http://35859fn060.zicp.vip:56591/', // 凡是遇到 /api 路径的请求，都映射到 target 属性
+                target: 'http://192.168.1.77:8095/', // 凡是遇到 /api 路径的请求，都映射到 target 属性
                 changeOrigin: true,
             },
             '/resource': {

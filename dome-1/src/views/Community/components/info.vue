@@ -29,11 +29,11 @@ const props = defineProps({
       </div>
       <div class="grid grid-cols-2">
         <div>
-          <div class="text-16 font-600 mb-4">{{ $filters.fixNumber(info.upBnbProfit,4) }}</div>
+          <div class="text-16 font-600 mb-4">{{ $filters.fixNumber(info.upBnbProfit,5) }}</div>
           <div class="text-12 text-[#CED0D8]">{{$t('community.info.text-0',{text:'BNB'})}}</div>
         </div>
         <div class="pr-20 text-right">
-          <div class="text-16 font-600 mb-4">{{ $filters.fixNumber(info.downBnbProfit,4) }}</div>
+          <div class="text-16 font-600 mb-4">{{ $filters.fixNumber(info.downBnbProfit,5) }}</div>
           <div class="text-12 text-[#CED0D8]">{{$t('community.info.text-1',{text:'BNB'})}}</div>
         </div>
       </div>

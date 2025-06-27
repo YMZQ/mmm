@@ -110,7 +110,7 @@ const vi = {
       "text-7": "Mua vào",
       "text-8": "{number-0}%, {number-1}% được thêm vào pool thanh khoản;",
       "text-9": "Bán ra",
-      "text-10": "{number-0}%, trong đó {number-1}% thưởng bảng xếp hạng, {number-2}% quỹ dự phòng rủi ro, {number-3}% vận hành dự án, {number-4}% đổ lại quỹ",
+      "text-10": "{number-0}%, {number-1}% dành cho quản lý dự án, {number-2}% quay trở lại quỹ thanh khoản",
       "text-11": "Quản lý pool thanh khoản",
       "text-12": "Thanh khoản ban đầu: {number-0}% {text-0} + {number-1}% {text-1}, nhà tạo lập thị trường tự động (AMM), cơ chế đốt động hàng ngày dựa trên thuật toán"
     },
@@ -259,6 +259,9 @@ const vi = {
       "all": "Tất cả",
       "submit": "Xác nhận"
     },
+    "records": {
+      "text-0": "Đóng băng"
+    },
     "features": {
       "extract": "Rút tiền",
       "sell": "Bán"
@@ -300,21 +303,15 @@ const vi = {
     }
   },
 
-  "transactionType0": "All",
-  "transactionType1": "Deposit",
-  "transactionType2": "Withdrawal",
-  "transactionType3": "Static Income",
-  "transactionType4": "Referral Reward",
-  "transactionType5": "Node Reward",
-  "transactionType6": "Donation",
-  "transactionType7": "LP Dividend",
-  "transactionType8": "Event Reward",
-  "transactionType9": "",
-  "transactionType10": "",
-  "transactionType11": "",
-  "transactionType12": "",
-  "transactionType13": "",
-  "transactionType14": "",
-  "transactionType15": "",
+  "transactionType0": "Tất cả",
+  "transactionType1": "",
+  "transactionType2": "Rút tiền",
+  "transactionType3": "Cổ tức LP",
+  "transactionType4": "Cổ tức bảng xếp hạng nắm giữ",
+  "transactionType5": "Cổ tức bảng xếp hạng LP",
+  "transactionType6": "Cổ tức bảng xếp hạng nắm giữ nhóm",
+  "transactionType7": "Thưởng cấp bậc",
+  "transactionType8": "",
+  "transactionType9": "Điều chỉnh tài sản"
 }
 export default vi;

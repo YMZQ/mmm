@@ -30,7 +30,7 @@ const currentWalletBalance = computed(() => {
   return props.balances.bnbBalance ?? null
 })
 
-const doAll = () => number.value = fixNumber(currentWalletBalance.value, 4);
+const doAll = () => number.value = fixNumber(currentWalletBalance.value, 5);
 
 
 const sendDepositCallback = async (hash) => {
@@ -58,9 +58,8 @@ const _Web3InAmount = async (val) => {
 };
 
 const onSubmit = async () => {
-  sendDepositCallback('0x09505220d1835602394d02bfbf377d23e2babc8ad3d89c74953d4c381662e1e6')
-  if (Number(number.value) <Number(props.depositInfo.minInAmount)) {
-    return proxy.$toast.error(t(t('deposit.computingPower.text-4',{number:props.depositInfo.minInAmount,text:'BNB'})));
+  if (Number(number.value) < Number(props.depositInfo.minInAmount)) {
+    return proxy.$toast.error(t('deposit.computingPower.text-4',{number:props.depositInfo.minInAmount,text:'BNB'}));
   }
   if (Number(number.value) > Number(currentWalletBalance.value)) {
     return proxy.$toast.error(t('popup.insufficientBalance', {text: 'BNB'}));
@@ -83,19 +82,19 @@ const onSubmit = async () => {
         <div class="absolute w-[16px] h-[16px] top-11 right-11"></div>
         <div class="w-full grid grid-cols-2 gap-x-[10px] gap-y-[20px] text-center">
           <div>
-            <div class="text-20 font-600">{{ $filters.fixNumber(depositInfo.thisAmount, 4) }}</div>
+            <div class="text-20 font-600">{{ $filters.fixNumber(depositInfo.thisAmount, 5) }}</div>
             <div class="text-12 text-[#CED0D8]">{{ $t('deposit.computingPower.text-0', {text: 'BNB'}) }}</div>
           </div>
           <div>
-            <div class="text-20 font-600">{{ $filters.fixNumber(depositInfo.todayOutput, 4) }}</div>
+            <div class="text-20 font-600">{{ $filters.fixNumber(depositInfo.todayOutput, 5) }}</div>
             <div class="text-12 text-[#CED0D8]">{{ $t('deposit.computingPower.text-1', {text: 'BNB'}) }}</div>
           </div>
           <div>
-            <div class="text-20 font-600">{{ $filters.fixNumber(depositInfo.totalOutput, 4) }}</div>
+            <div class="text-20 font-600">{{ $filters.fixNumber(depositInfo.totalOutput, 5) }}</div>
             <div class="text-12 text-[#CED0D8]">{{ $t('deposit.computingPower.text-2', {text: 'BNB'}) }}</div>
           </div>
           <div>
-            <div class="text-20 font-600">{{ $filters.fixNumber(depositInfo.surplusAmount, 4) }}</div>
+            <div class="text-20 font-600">{{ $filters.fixNumber(depositInfo.surplusAmount, 5) }}</div>
             <div class="text-12 text-[#CED0D8]">{{ $t('deposit.computingPower.text-3', {text: 'BNB'}) }}</div>
           </div>
         </div>
@@ -104,7 +103,7 @@ const onSubmit = async () => {
         <van-form @submit="onSubmit">
           <van-field class="mb-5" :border="false"
                      v-model="number" type="number"
-                     :placeholder="$t('deposit.computingPower.text-4',{number:depositInfo.minInAmount,text:'BNB'})">
+                     :placeholder="$t('deposit.computingPower.text-4',{number:fixNumber(depositInfo.minInAmount,5),text:'BNB'})">
             <template #button>
               <div @click="doAll">{{ $t('deposit.computingPower.all') }}</div>
             </template>
@@ -115,7 +114,7 @@ const onSubmit = async () => {
               <van-loading size="18" color="#ec4110"/>
               <span   class="text-style-1">BNB</span>
             </span>
-            <span v-else class="text-style-1">{{ $filters.fixNumber(currentWalletBalance, 4) }} BNB</span>
+            <span v-else class="text-style-1">{{ $filters.fixNumber(currentWalletBalance, 5) }} BNB</span>
           </div>
           <van-button class="w-full  text-16 text-[#1C3B5E] font-600 relative"  native-type="submit">
             {{ $t('deposit.computingPower.submit') }}

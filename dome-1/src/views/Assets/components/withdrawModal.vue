@@ -70,7 +70,7 @@ const _Web3OutAssets = async (val) => {
     proxy.$toast.error(result.message)
   }
 };
-const doAll = () => number.value = fixNumber(currencyInfo.value.balance, currencyInfo.value.coin==='bnb'?4:2);
+const doAll = () => number.value = fixNumber(currencyInfo.value.balance, currencyInfo.value.coin==='bnb'?5:2);
 
 const onSubmit = async () => {
   if (Number(number.value) <= 0 || Number(number.value)>currencyInfo.value.balance) {
@@ -108,7 +108,7 @@ const onSubmit = async () => {
           </template>
         </van-field>
         <div class="mb-24 mt-10 flex">
-          <span class="text-style-1">{{ $t('assets.extract.text-2') }}:{{ $filters.fixNumber(currencyInfo.balance,currencyInfo.coin==='bnb'?4:2) }}</span>
+          <span class="text-style-1">{{ $t('assets.extract.text-2') }}:{{ $filters.fixNumber(currencyInfo.balance,currencyInfo.coin==='bnb'?5:2) }}</span>
         </div>
         <van-button class="w-full  text-16 text-[#1C3B5E] font-600 relative" native-type="submit">
           {{ $t('assets.extract.submit') }}

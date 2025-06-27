@@ -1,7 +1,8 @@
 <script setup>
 const props = defineProps({
   healthScore: {
-    type: [Number,String]
+    type: [Number,String],
+    default: null
   }
 })
 </script>
@@ -12,12 +13,12 @@ const props = defineProps({
          class="-mt-10 w-[240px] h-[240px] mx-auto text-14 font-700 flex items-center justify-center bg-[url(@/assets/image/assets/image-0.png)] bg-cover bg-no-repeat bg-center">
       <div class="pl-8">{{ $t('assets.health.text-0') }}</div>
     </div>
-    <div v-else-if="healthScore<1.5 && healthScore>0.8"
+    <div v-if="healthScore<=1.5 && healthScore>=0.8"
          class="-mt-10 w-[240px] h-[240px] mx-auto text-14 font-700 flex items-center justify-center bg-[url(@/assets/image/assets/image-1.png)] bg-cover bg-no-repeat bg-center">
       <div class="pl-8">{{ $t('assets.health.text-1') }}</div>
     </div>
 
-    <div v-else-if="healthScore<0.8"
+    <div v-if="healthScore<0.8"
          class="-mt-10 w-[240px] h-[240px] mx-auto text-14 font-700 flex items-center justify-center bg-[url(@/assets/image/assets/image-2.png)] bg-cover bg-no-repeat bg-center">
       <div class="pl-8">{{ $t('assets.health.text-2') }}</div>
     </div>
